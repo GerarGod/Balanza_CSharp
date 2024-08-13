@@ -2,6 +2,9 @@
 using System.Data;
 using System.Data.OleDb;
 
+using Microsoft.Win32;
+
+
 namespace Balanza
 {
     public class ClsAccesoDatos
@@ -14,42 +17,16 @@ namespace Balanza
 
         public ClsAccesoDatos(string strDatabasePath,string strProvider)
         {
-            if (strProvider == "default" || strProvider.Length==0 ) {
-                strProvider= System.Windows.Forms.Application.StartupPath;
+            if (strDatabasePath == "default" || strDatabasePath.Length==0 ) {
+                strDatabasePath = System.Windows.Forms.Application.StartupPath;
             }
-            strProvider = strProvider + "\\DB_BASSO.accdb";
+            strDatabasePath = strDatabasePath + "DB_BASSO.accdb";
 
-            _connectionString = $@"Provider={strProvider};Data Source={strDatabasePath};Persist Security Info=False;"; // Using recommended version 12.0 for Access 2010
+            _connectionString = $@"Provider={strProvider};Data Source={strDatabasePath};Jet OLEDB:Database Password=gerargod"; // Using recommended version 12.0 for Access 2010
 
+            
             // Ensure the System.Data.OleDb reference is added to your project
             _connection = new OleDbConnection(_connectionString);
-
-            OpenConnection();
-
-
-            /*
-             
-             
-                         try
-            {
-                string aceProvider = GetAccessVersion();
-                if (aceProvider != null)
-                {
-                    Console.WriteLine($"Microsoft Access está instalado. Utiliza el proveedor: {aceProvider}");
-                }
-                else
-                {
-                    Console.WriteLine("No se detectó Microsoft Access instalado.");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Ocurrió un error al detectar la versión de Access: {ex.Message}");
-            }
-             
-             */
-
-
 
         }
 
@@ -66,7 +43,30 @@ namespace Balanza
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al abrir la conexión: {ex.Message}");
+                MessageBox.Show($"Error al abrir la conexión: {ex.Message}");
+                try
+                {
+                    string aceProvider = GetAccessVersion();
+                    if (aceProvider != null)
+                    {
+                        Console.WriteLine($"Microsoft Access está instalado. Utiliza el proveedor: {aceProvider}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se detectó Microsoft Access instalado.");
+                        MessageBox.Show("No se detectó Microsoft Access instalado.");
+                    }
+                }
+                catch (Exception exx)
+                {
+                    Console.WriteLine($"Ocurrió un error al detectar la versión de Access: {exx.Message}");
+
+                    MessageBox.Show($"Ocurrió un error al detectar la versión de Access: {exx.Message}");
+                }
+
+
+
+
             }
         }
 
@@ -84,6 +84,7 @@ namespace Balanza
             catch (Exception ex)
             {
                 Console.WriteLine($"Error al cerrar la conexión: {ex.Message}");
+
             }
         }
 
@@ -127,17 +128,15 @@ namespace Balanza
             }
             return affectedRows;
         }
-    }
-    /*
-
         private static string GetAccessVersion()
         {
+            // Rutas de registro para proveedores de 32 bits y 64 bits
             string[] registryPaths = {
             @"SOFTWARE\Microsoft\Office",
             @"SOFTWARE\WOW6432Node\Microsoft\Office"
         };
 
-            string aceProvider = null;
+            string aceProvider = string.Empty;
 
             foreach (string path in registryPaths)
             {
@@ -150,28 +149,17 @@ namespace Balanza
                         // Verificamos que la subclave sea numérica (ejemplo: 14.0, 16.0, etc.)
                         if (double.TryParse(subKeyName, out _))
                         {
-                            using (RegistryKey accessKey = officeKey.OpenSubKey($"{subKeyName}\\Access"))
+                            using (RegistryKey accessKey = officeKey.OpenSubKey($"{subKeyName}\\Access\\InstallRoot"))
                             {
                                 if (accessKey != null)
                                 {
-                                    // Determinamos el proveedor en base a la versión
-                                    switch (subKeyName)
-                                    {
-                                        case "12.0":
-                                            aceProvider = "Microsoft.ACE.OLEDB.12.0";
-                                            break;
-                                        case "14.0":
-                                            aceProvider = "Microsoft.ACE.OLEDB.14.0";
-                                            break;
-                                        case "15.0":
-                                            aceProvider = "Microsoft.ACE.OLEDB.15.0";
-                                            break;
-                                        case "16.0":
-                                            aceProvider = "Microsoft.ACE.OLEDB.16.0";
-                                            break;
 
-                                    }
-                                    return aceProvider;
+                                    // Determinamos el proveedor en base a la versión
+                                    aceProvider += $"Microsoft.ACE.OLEDB.{subKeyName} - ";
+
+                                    // Añadimos información de si es 32 o 64 bits
+                                    string bitVersion = path.Contains("WOW6432Node") ? "32-bit" : "64-bit";
+                                    aceProvider += bitVersion + "; ";
                                 }
                             }
                         }
@@ -180,8 +168,69 @@ namespace Balanza
             }
 
             return aceProvider;
-        }     
+        }
+        //private static string GetAccessVersion()
+        //{
+        //    string[] registryPaths = {
+        //    @"SOFTWARE\Microsoft\Office",
+        //    @"SOFTWARE\WOW6432Node\Microsoft\Office"
+        //};
+
+        //    string aceProvider = null;
+
+        //    foreach (string path in registryPaths)
+        //    {
+        //        using (RegistryKey officeKey = Registry.LocalMachine.OpenSubKey(path))
+        //        {
+        //            if (officeKey == null) continue;
+
+        //            foreach (string subKeyName in officeKey.GetSubKeyNames())
+        //            {
+        //                // Verificamos que la subclave sea numérica (ejemplo: 14.0, 16.0, etc.)
+        //                if (double.TryParse(subKeyName, out _))
+        //                {
+        //                    using (RegistryKey accessKey = officeKey.OpenSubKey($"{subKeyName}\\Access"))
+        //                    {
+        //                        if (accessKey != null)
+        //                        {
+
+        //                            // Determinamos el proveedor en base a la versión
+        //                            aceProvider = aceProvider + "Microsoft.ACE.OLEDB." + subKeyName + "; ";
+        //                            /*
+        //                            switch (subKeyName)
+        //                            {
+
+
+        //                                case "12.0":
+        //                                    aceProvider = "Microsoft.ACE.OLEDB.12.0";
+        //                                    break;
+        //                                case "14.0":
+        //                                    aceProvider = "Microsoft.ACE.OLEDB.14.0";
+        //                                    break;
+        //                                case "15.0":
+        //                                    aceProvider = "Microsoft.ACE.OLEDB.15.0";
+        //                                    break;
+        //                                case "16.0":
+        //                                    aceProvider = "Microsoft.ACE.OLEDB.16.0";
+        //                                    break;
+
+        //                            }
+        //                            return aceProvider;
+        //                            */
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+
+        //    return aceProvider;
+        //}
+    }
+    
+
+         
      
      
-     */
+     
 }

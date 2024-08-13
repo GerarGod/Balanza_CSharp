@@ -12,45 +12,76 @@ namespace Balanza
         {
             InitializeComponent();
             ReadAllSettings();
-            ClsGlobalVariables.objdDB = new ClsAccesoDatos(strDB_Source, strDB_Provider);
+            ClsGlobalVariables.objDB = new ClsAccesoDatos(strDB_Source, strDB_Provider);
+            try
+            {
+                //seteo la clase impresion que voy a mantener durante toda  la aplicacion 
+                ClsGlobalVariables.objImpresion = new ClsImpresion();
+
+                if (!ClsGlobalVariables.objImpresion.CargarDatosEmpresa())
+                {
+                }
+                if (!ClsGlobalVariables.objImpresion.ObtenerParametros())
+                {
+                }
+                //if (!ClsGlobalVariables.objImpresion.ObtenerProximoNroTk())
+                //{
+                //}
+
+
+
+
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
 
         }
 
         private void ReadAllSettings()
         {
             try
-            {   
+            {
                 // Leer configuraciones desde App.config
                 ClsGlobalVariables.strConfigPuertoNroCommPort = ConfigurationManager.AppSettings["ConfigPuertoNroCommPort"] ?? "";
                 ClsGlobalVariables.strConfigLogDataReceiving = ConfigurationManager.AppSettings["ConfigLogDataReceiving"] ?? "";
 
-                if (ClsGlobalVariables.strConfigPuertoNroCommPort.Length==0)
+                if (ClsGlobalVariables.strConfigPuertoNroCommPort.Length == 0)
                 {
                     MessageBox.Show("Error reading app settings,no pudo reculerar el valor de strConfigPuertoNroCommPort");
+                    return;
                 }
                 if (ClsGlobalVariables.strConfigLogDataReceiving.Length == 0)
                 {
                     MessageBox.Show("Error reading app settings,no pudo reculerar el valor de strConfigLogDataReceiving");
+                    return;
                 }
-                this.strDB_Source = ConfigurationManager.AppSettings["DB_Provider"] ?? "";
-                this.strDB_Provider = ConfigurationManager.AppSettings["DB_Source"] ?? "";
+
+                this.strDB_Source = ConfigurationManager.AppSettings["DB_Source"] ?? "";
 
                 if (strDB_Source.Length == 0)
                 {
                     MessageBox.Show("Error reading app settings,no pudo reculerar el valor de strDB_Source");
+                    return;
                 }
+                this.strDB_Provider = ConfigurationManager.AppSettings["DB_Provider"] ?? "";
                 if (strDB_Provider.Length == 0)
                 {
                     MessageBox.Show("Error reading app settings,no pudo reculerar el valor de strDB_Provider");
+                    return;
                 }
             }
             catch (ConfigurationErrorsException ex)
             {
                 Console.WriteLine("Error reading app settings");
-                MessageBox.Show("Error reading app settings, error : " + ex.Message);
+                MessageBox.Show("Cargando Configuraciones, error : " + ex.Message);
 
-                
+
             }
+
+
+
+
+
+
         }
         static void AddUpdateAppSettings(string key, string value)
         {
@@ -125,6 +156,13 @@ namespace Balanza
         private void FormBalanzaLG_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void menuItemImpresiones_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormImpresiones>();
+
+            
         }
     }
 }

@@ -59,6 +59,7 @@
             menuItemImpresiones.Name = "menuItemImpresiones";
             menuItemImpresiones.Size = new Size(83, 20);
             menuItemImpresiones.Text = "Impresiones";
+            menuItemImpresiones.Click += menuItemImpresiones_Click;
             // 
             // menuItemConfiguraciones
             // 

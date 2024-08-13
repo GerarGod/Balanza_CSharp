@@ -13,7 +13,9 @@ namespace Balanza
         public static string strConfigPuertoNroCommPort="";
         public static string strConfigLogDataReceiving = "";
 
-        public static ClsAccesoDatos objdDB;
+        public static ClsAccesoDatos objDB;
+        public static ClsImpresion objImpresion;
+
 
 
 
