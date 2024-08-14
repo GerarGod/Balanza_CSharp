@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImpresiones));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImpresiones));
             groupBox1 = new GroupBox();
             cmbMercaderia = new ComboBox();
             label2 = new Label();
@@ -172,11 +172,14 @@
             // 
             // cmdBuscar
             // 
+            cmdBuscar.Image = (Image)resources.GetObject("cmdBuscar.Image");
+            cmdBuscar.ImageAlign = ContentAlignment.TopCenter;
             cmdBuscar.Location = new Point(937, 35);
             cmdBuscar.Name = "cmdBuscar";
-            cmdBuscar.Size = new Size(95, 75);
+            cmdBuscar.Size = new Size(95, 73);
             cmdBuscar.TabIndex = 9;
             cmdBuscar.Text = "Buscar";
+            cmdBuscar.TextAlign = ContentAlignment.BottomCenter;
             cmdBuscar.UseVisualStyleBackColor = true;
             cmdBuscar.Click += cmdBuscar_Click;
             // 
@@ -242,6 +245,8 @@
             dgwImpreciones.AllowUserToAddRows = false;
             dgwImpreciones.AllowUserToDeleteRows = false;
             dgwImpreciones.AllowUserToOrderColumns = true;
+            dgwImpreciones.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            dgwImpreciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgwImpreciones.BackgroundColor = Color.FromArgb(140, 200, 255);
             dgwImpreciones.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -299,6 +304,7 @@
             NroTk.HeaderText = "Nro Tk";
             NroTk.Name = "NroTk";
             NroTk.ReadOnly = true;
+            NroTk.Width = 66;
             // 
             // FechaHora
             // 
@@ -306,7 +312,7 @@
             FechaHora.HeaderText = "Fecha Hora";
             FechaHora.Name = "FechaHora";
             FechaHora.ReadOnly = true;
-            FechaHora.Width = 110;
+            FechaHora.Width = 91;
             // 
             // RazonSocial
             // 
@@ -354,6 +360,7 @@
             Certificado.HeaderText = "Certificado";
             Certificado.Name = "Certificado";
             Certificado.ReadOnly = true;
+            Certificado.Width = 89;
             // 
             // ValidadCert
             // 
@@ -361,6 +368,7 @@
             ValidadCert.HeaderText = "Validad Cert";
             ValidadCert.Name = "ValidadCert";
             ValidadCert.ReadOnly = true;
+            ValidadCert.Width = 94;
             // 
             // NroPermEmbarque
             // 
@@ -368,7 +376,7 @@
             NroPermEmbarque.HeaderText = "Nro Permso Embarque";
             NroPermEmbarque.Name = "NroPermEmbarque";
             NroPermEmbarque.ReadOnly = true;
-            NroPermEmbarque.Width = 150;
+            NroPermEmbarque.Width = 151;
             // 
             // IdContenedor
             // 
@@ -376,6 +384,7 @@
             IdContenedor.HeaderText = "Id Contenedor";
             IdContenedor.Name = "IdContenedor";
             IdContenedor.ReadOnly = true;
+            IdContenedor.Width = 107;
             // 
             // IdentificadorBulto
             // 
@@ -383,7 +392,7 @@
             IdentificadorBulto.HeaderText = "Identificador Bulto";
             IdentificadorBulto.Name = "IdentificadorBulto";
             IdentificadorBulto.ReadOnly = true;
-            IdentificadorBulto.Width = 150;
+            IdentificadorBulto.Width = 129;
             // 
             // Mercaderia
             // 
@@ -391,7 +400,7 @@
             Mercaderia.HeaderText = "Mercaderia";
             Mercaderia.Name = "Mercaderia";
             Mercaderia.ReadOnly = true;
-            Mercaderia.Width = 150;
+            Mercaderia.Width = 90;
             // 
             // Peso
             // 
@@ -399,9 +408,11 @@
             Peso.HeaderText = "Peso";
             Peso.Name = "Peso";
             Peso.ReadOnly = true;
+            Peso.Width = 56;
             // 
             // groupBox2
             // 
+            groupBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             groupBox2.Controls.Add(txtPeso);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(txtMercaderia);
@@ -591,12 +602,12 @@
             // cmdImprimir
             // 
             cmdImprimir.Image = (Image)resources.GetObject("cmdImprimir.Image");
-            cmdImprimir.ImageAlign = ContentAlignment.TopCenter;
-            cmdImprimir.Location = new Point(937, 40);
+            cmdImprimir.Location = new Point(937, 57);
             cmdImprimir.Name = "cmdImprimir";
             cmdImprimir.Size = new Size(95, 73);
             cmdImprimir.TabIndex = 9;
             cmdImprimir.Text = "Imprimir";
+            cmdImprimir.TextAlign = ContentAlignment.BottomCenter;
             cmdImprimir.UseVisualStyleBackColor = true;
             // 
             // FormImpresiones
