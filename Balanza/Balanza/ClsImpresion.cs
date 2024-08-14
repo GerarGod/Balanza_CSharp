@@ -160,8 +160,17 @@ namespace Balanza
 
             }
         }
+        public DataTable ObtenerImpresiones(string selectQuery)
+        {
+            // Abrir la conexión
+            ClsGlobalVariables.objDB.OpenConnection();
+            DataTable results = ClsGlobalVariables.objDB.ExecuteQuery(selectQuery);
+            // Cerrar la conexión
+            ClsGlobalVariables.objDB.CloseConnection();
+            return results; // Retornar el DataTable
 
-  
+        }
+
 
 
     }
