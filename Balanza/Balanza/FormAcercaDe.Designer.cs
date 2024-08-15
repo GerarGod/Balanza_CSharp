@@ -28,20 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.AcercaDe;
-            pictureBox1.InitialImage = Properties.Resources.AcercaDe;
-            pictureBox1.Location = new Point(-1, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(456, 340);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -60,19 +48,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(454, 338);
             Controls.Add(label1);
-            Controls.Add(pictureBox1);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormAcercaDe";
             Text = "AcercaDe";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Label label1;
     }
 }
