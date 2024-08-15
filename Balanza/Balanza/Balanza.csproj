@@ -96,6 +96,12 @@
     <Compile Include="FormImpresiones.Designer.cs">
       <DependentUpon>FormImpresiones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTK.Designer.cs">
+      <DependentUpon>FormTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAcercaDe.resx">
@@ -107,6 +113,9 @@
     <EmbeddedResource Include="FormImpresiones.resx">
       <DependentUpon>FormImpresiones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTK.resx">
+      <DependentUpon>FormTK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -116,7 +125,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reporte\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -370,6 +370,8 @@ namespace Balanza
 
 
 
+
+
         //private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         //{
         //    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
