@@ -361,6 +361,21 @@ namespace Balanza
         private void cmdImprimir_Click(object sender, EventArgs e)
         {
 
+            //cargo el reporte 
+            FormTK objReporte = new FormTK();
+
+            /*
+            DataTable dataTableSP = objRetencion.ObtenerBeneficiosReporte01(97);
+            objUtilidadesControlador.ReportesDataTableRenombrarNombreCampo(ref dataTableSP);
+            objReporte.Datos = dataTableSP;
+            */
+            //objReporte.Datos = objUtilidadesControlador.ReportesObtenerDataTableDeDataGridView(dgwBeneficios);
+            //objReporte.NombreDataSet = "RptRetencionLiberacion";
+            //objReporte.ReportPath = Application.StartupPath + "\\ReportesPlantillas\\Plantillas\\RptRetencionLiberacion.rdlc";
+            //objReporte.Titulo = "Reporte Retención / Liberación";
+            objReporte.ShowDialog();
+
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
