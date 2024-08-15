@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Balanza
 {
-    public partial class FormBalanza : Form
+    public partial class FormTK : Form
     {
-        public FormBalanza()
+        public FormTK()
         {
             InitializeComponent();
+        }
+
+        private void FormTK_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
         }
     }
 }
