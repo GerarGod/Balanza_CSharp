@@ -78,6 +78,7 @@
     <Compile Include="ClsGlobalVariables.cs" />
     <Compile Include="ClsImpresion.cs" />
     <Compile Include="clsMercaderia.cs" />
+    <Compile Include="ClsTicketEntidad.cs" />
     <Compile Include="FormAcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>

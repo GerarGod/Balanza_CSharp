@@ -14,6 +14,7 @@ namespace Balanza
 {
     public partial class FormTK : Form
     {
+        public ClsTicketEntidad objTicket;
         public FormTK()
         {
             InitializeComponent();
@@ -50,31 +51,45 @@ namespace Balanza
 
             //  this.reportViewer1.RefreshReport();
 
-
-
-            PtxtFechaHora = objImpresionTemp.FechaHora;
-
-            PtxtNroTk=objImpresionTemp.NroTk;
-
-            PtxtRaznSocial =objImpresionTemp.RazonSocial;
-
-            PtxtCUIL =objImpresionTemp.CUIT;
-            PtxtCodigoAduana =objImpresionTemp.CodigoAduana;
-            PtxtLotPlanta =objImpresionTemp.LotPlanta;
-            PtxtLotBalanza =objImpresionTemp.LotBalanza;
-
-            PtxtCertificado =objImpresionTemp.Certificado;
-            PtxtValidadCert =objImpresionTemp.ValidadCert;
-            PtxtNroPermEmbarque =objImpresionTemp.NroPermEmbarque;
-            PtxtIdContenedor =objImpresionTemp.IdContenedor;
-            PtxtIdentificadorBulto =objImpresionTemp.IdentificadorBulto;
-
-            PtxtDescMercaderia =objImpresionTemp.Mercaderia;
-            PtxtPeso =objImpresionTemp.Peso;
-
             reportViewer1.LocalReport.ReportPath = "Report.rdlc";
+            
+                        // Crea una lista de parámetros
+                        List<ReportParameter> parametros = new List<ReportParameter>();
+
+                        // Agrega múltiples parámetros
+
+                        parametros.Add(new ReportParameter("PtxtFechaHora", objTicket.FechaHora.ToString() ));
+                        parametros.Add(new ReportParameter("PtxtNroTk", objTicket.NroTk.ToString("0000000000"))); 
+
+                        parametros.Add(new ReportParameter("PtxtRaznSocial",objTicket.RazonSocial));
+
+                        parametros.Add(new ReportParameter("PtxtCUIL", objTicket.CUIT));
+                        parametros.Add(new ReportParameter("PtxtCodigoAduana", objTicket.CodigoAduana));
+                        parametros.Add(new ReportParameter("PtxtLotPlanta", objTicket.LotPlanta));
+                        parametros.Add(new ReportParameter("PtxtLotBalanza",  objTicket.LotBalanza));
+
+                        parametros.Add(new ReportParameter("PtxtCertificado",  objTicket.Certificado));
+                        parametros.Add(new ReportParameter("PtxtValidadCert",objTicket.ValidadCert));
+                        parametros.Add(new ReportParameter("PtxtNroPermEmbarque", objTicket.NroPermEmbarque));
+                        parametros.Add(new ReportParameter("PtxtIdContenedor", objTicket.IdContenedor));
+                        parametros.Add(new ReportParameter("PtxtIdentificadorBulto", objTicket.IdentificadorBulto));
+
+                        parametros.Add(new ReportParameter("PtxtDescMercaderia", objTicket.Mercaderia));
+                        parametros.Add(new ReportParameter("PtxtPeso", objTicket.Peso));
+                        // Asigna los parámetros al ReportViewer
+                        reportViewer1.LocalReport.SetParameters(parametros);
+                     
+
+
             this.reportViewer1.RefreshReport();
-  
+
+           // return reportViewer.LocalReport.Render("PDF");
+
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
