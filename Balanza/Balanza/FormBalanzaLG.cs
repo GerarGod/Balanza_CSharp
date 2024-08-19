@@ -120,14 +120,13 @@ namespace Balanza
 
         private void menuItemBalanza_Click(object sender, EventArgs e)
         {
-
-
+                AbrirFormulario<FormBalanza>();
 
         }
 
         private void menuItemAcercaDe_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormAcercaDe>();
+            
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

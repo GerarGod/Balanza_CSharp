@@ -50,7 +50,7 @@ namespace Balanza
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(890, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1085, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -89,7 +89,7 @@ namespace Balanza
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelPrincipalBalanza.Location = new System.Drawing.Point(0, 23);
             this.panelPrincipalBalanza.Name = "panelPrincipalBalanza";
-            this.panelPrincipalBalanza.Size = new System.Drawing.Size(890, 465);
+            this.panelPrincipalBalanza.Size = new System.Drawing.Size(1085, 663);
             this.panelPrincipalBalanza.TabIndex = 1;
             this.panelPrincipalBalanza.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrincipalBalanza_Paint);
             // 
@@ -97,7 +97,7 @@ namespace Balanza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 489);
+            this.ClientSize = new System.Drawing.Size(1085, 687);
             this.Controls.Add(this.panelPrincipalBalanza);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

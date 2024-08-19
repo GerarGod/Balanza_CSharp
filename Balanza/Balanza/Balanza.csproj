@@ -85,6 +85,12 @@
     <Compile Include="FormAcercaDe.designer.cs">
       <DependentUpon>FormAcercaDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBalanza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBalanza.Designer.cs">
+      <DependentUpon>FormBalanza.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBalanzaLG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAcercaDe.resx">
       <DependentUpon>FormAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBalanza.resx">
+      <DependentUpon>FormBalanza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBalanzaLG.resx">
       <DependentUpon>FormBalanzaLG.cs</DependentUpon>

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImpresiones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmdBuscar = new System.Windows.Forms.Button();
             this.cmbMercaderia = new System.Windows.Forms.ComboBox();
@@ -103,11 +103,12 @@
             this.groupBox1.Size = new System.Drawing.Size(1054, 154);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ticket";
+            this.groupBox1.Text = "Opciones de búsqueda";
             // 
             // cmdBuscar
             // 
-            this.cmdBuscar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cmdBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            this.cmdBuscar.ForeColor = System.Drawing.Color.White;
             this.cmdBuscar.Image = ((System.Drawing.Image)(resources.GetObject("cmdBuscar.Image")));
             this.cmdBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.cmdBuscar.Location = new System.Drawing.Point(935, 51);
@@ -116,7 +117,7 @@
             this.cmdBuscar.TabIndex = 10;
             this.cmdBuscar.Text = "Buscar";
             this.cmdBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.UseVisualStyleBackColor = false;
             this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
             // cmbMercaderia
@@ -181,7 +182,6 @@
             this.txtNrotkBusqueda.TabIndex = 4;
             this.txtNrotkBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNrotkBusqueda.TextChanged += new System.EventHandler(this.txtNrotkBusqueda_TextChanged);
-            this.txtNrotkBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNrotkBusqueda_KeyPress);
             // 
             // chkMercaderia
             // 
@@ -250,14 +250,14 @@
             this.dgwImpreciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgwImpreciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.dgwImpreciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(158)))), ((int)(((byte)(81)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwImpreciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(158)))), ((int)(((byte)(81)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwImpreciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwImpreciones.ColumnHeadersHeight = 30;
             this.dgwImpreciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgwImpreciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -282,25 +282,26 @@
             this.dgwImpreciones.Location = new System.Drawing.Point(11, 170);
             this.dgwImpreciones.Name = "dgwImpreciones";
             this.dgwImpreciones.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwImpreciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwImpreciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgwImpreciones.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(240)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
-            this.dgwImpreciones.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(240)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            this.dgwImpreciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgwImpreciones.Size = new System.Drawing.Size(1054, 236);
             this.dgwImpreciones.TabIndex = 1;
+            this.dgwImpreciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwImpreciones_CellClick);
             this.dgwImpreciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwImpreciones_CellContentClick);
-            this.dgwImpreciones.SelectionChanged += new System.EventHandler(this.dgwImpreciones_SelectionChanged);
+            this.dgwImpreciones.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwImpreciones_CellEnter);
             // 
             // IdImpresion
             // 
@@ -464,7 +465,6 @@
             this.txtMercaderia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtMercaderia.Location = new System.Drawing.Point(611, 88);
             this.txtMercaderia.Name = "txtMercaderia";
-            this.txtMercaderia.ReadOnly = true;
             this.txtMercaderia.Size = new System.Drawing.Size(202, 25);
             this.txtMercaderia.TabIndex = 23;
             // 
@@ -486,7 +486,6 @@
             this.txtIDContenedor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtIDContenedor.Location = new System.Drawing.Point(611, 57);
             this.txtIDContenedor.Name = "txtIDContenedor";
-            this.txtIDContenedor.ReadOnly = true;
             this.txtIDContenedor.Size = new System.Drawing.Size(202, 25);
             this.txtIDContenedor.TabIndex = 21;
             // 
@@ -520,7 +519,6 @@
             this.txtValidadCert.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtValidadCert.Location = new System.Drawing.Point(611, 26);
             this.txtValidadCert.Name = "txtValidadCert";
-            this.txtValidadCert.ReadOnly = true;
             this.txtValidadCert.Size = new System.Drawing.Size(155, 25);
             this.txtValidadCert.TabIndex = 18;
             // 
@@ -542,7 +540,6 @@
             this.txtCertificado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCertificado.Location = new System.Drawing.Point(340, 27);
             this.txtCertificado.Name = "txtCertificado";
-            this.txtCertificado.ReadOnly = true;
             this.txtCertificado.Size = new System.Drawing.Size(155, 25);
             this.txtCertificado.TabIndex = 16;
             // 
@@ -552,7 +549,6 @@
             this.txtPeso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtPeso.Location = new System.Drawing.Point(210, 119);
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.ReadOnly = true;
             this.txtPeso.Size = new System.Drawing.Size(202, 25);
             this.txtPeso.TabIndex = 15;
             // 
@@ -562,7 +558,6 @@
             this.txtIdentificadorBultoTxt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtIdentificadorBultoTxt.Location = new System.Drawing.Point(210, 88);
             this.txtIdentificadorBultoTxt.Name = "txtIdentificadorBultoTxt";
-            this.txtIdentificadorBultoTxt.ReadOnly = true;
             this.txtIdentificadorBultoTxt.Size = new System.Drawing.Size(202, 25);
             this.txtIdentificadorBultoTxt.TabIndex = 14;
             // 
@@ -572,7 +567,6 @@
             this.txtNroPermisoEmbarque.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtNroPermisoEmbarque.Location = new System.Drawing.Point(210, 57);
             this.txtNroPermisoEmbarque.Name = "txtNroPermisoEmbarque";
-            this.txtNroPermisoEmbarque.ReadOnly = true;
             this.txtNroPermisoEmbarque.Size = new System.Drawing.Size(202, 25);
             this.txtNroPermisoEmbarque.TabIndex = 13;
             // 
@@ -602,8 +596,9 @@
             // 
             // cmdImprimir
             // 
+            this.cmdImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
             this.cmdImprimir.Enabled = false;
-            this.cmdImprimir.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cmdImprimir.ForeColor = System.Drawing.Color.White;
             this.cmdImprimir.Image = ((System.Drawing.Image)(resources.GetObject("cmdImprimir.Image")));
             this.cmdImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.cmdImprimir.Location = new System.Drawing.Point(935, 51);
@@ -612,7 +607,7 @@
             this.cmdImprimir.TabIndex = 10;
             this.cmdImprimir.Text = "Imprimir";
             this.cmdImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmdImprimir.UseVisualStyleBackColor = true;
+            this.cmdImprimir.UseVisualStyleBackColor = false;
             this.cmdImprimir.Click += new System.EventHandler(this.cmdImprimir_Click);
             // 
             // label3
@@ -645,7 +640,6 @@
             this.txtNroTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtNroTicket.Location = new System.Drawing.Point(93, 28);
             this.txtNroTicket.Name = "txtNroTicket";
-            this.txtNroTicket.ReadOnly = true;
             this.txtNroTicket.Size = new System.Drawing.Size(155, 25);
             this.txtNroTicket.TabIndex = 4;
             this.txtNroTicket.TextChanged += new System.EventHandler(this.txtNroTicket_TextChanged);
@@ -661,6 +655,7 @@
             this.Name = "FormImpresiones";
             this.Text = "FormImpresiones";
             this.Load += new System.EventHandler(this.FormImpresiones_Load);
+            this.Shown += new System.EventHandler(this.FormImpresiones_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwImpreciones)).EndInit();

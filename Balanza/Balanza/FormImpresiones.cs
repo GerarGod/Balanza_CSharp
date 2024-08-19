@@ -252,29 +252,29 @@ namespace Balanza
             }
         }
 
-        private void txtNrotkBusqueda_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                e.Handled = false;
-                cmdBuscar_Click(null, null);
-            }
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
+        //private void txtNrotkBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == (char)13)
+        //    {
+        //        e.Handled = false;
+        //        cmdBuscar_Click(null, null);
+        //    }
+        //    if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+        //    {
+        //        e.Handled = true;
+        //    }
 
-        }
-        private void dgwImpreciones_SelectionChanged(object sender, EventArgs e)
-        {
-            // Manejar cambio de selección
-            if (dgwImpreciones.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = dgwImpreciones.SelectedRows[0];
-                // Código para manejar la nueva fila seleccionada
-                CargarTk(selectedRow);
-            }
-        }
+        //}
+        //private void dgwImpreciones_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    // Manejar cambio de selección
+        //    if (dgwImpreciones.SelectedRows.Count > 0)
+        //    {
+        //        DataGridViewRow selectedRow = dgwImpreciones.SelectedRows[0];
+        //        // Código para manejar la nueva fila seleccionada
+        //        CargarTk(selectedRow);
+        //    }
+        //}
 
         private void dgwImpreciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -285,6 +285,29 @@ namespace Balanza
                 CargarTk(selectedRow);
             }
         }
+        private void dgwImpreciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Manejar cualquier clic en una celda
+            if (e.RowIndex >= 0)
+            {
+                // Obtén la fila en la que se hizo clic
+                DataGridViewRow selectedRow = dgwImpreciones.Rows[e.RowIndex];
+                CargarTk(selectedRow);
+            }
+        }
+
+        private void dgwImpreciones_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            // Manejar cualquier clic en una celda
+            if (e.RowIndex >= 0)
+            {
+                // Obtén la fila en la que se hizo clic
+                DataGridViewRow selectedRow = dgwImpreciones.Rows[e.RowIndex];
+                CargarTk(selectedRow);
+            }
+        }
+
+
         //private void dgwImprecione_CellClick(object sender, DataGridViewCellEventArgs e)
         //{
         //    // Manejar cualquier clic en una celda
@@ -392,6 +415,11 @@ namespace Balanza
         {
 
         }
+
+
+
+
+
 
 
 
