@@ -42,7 +42,7 @@
             this.txtValidadCert = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCertificado = new System.Windows.Forms.TextBox();
-            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.txtPesoTk = new System.Windows.Forms.TextBox();
             this.txtIdentificadorBulto = new System.Windows.Forms.TextBox();
             this.txtNroPermisoEmbarque = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,11 +53,11 @@
             this.txtNroTicket = new System.Windows.Forms.TextBox();
             this.cmdStop = new System.Windows.Forms.Button();
             this.cmdStart = new System.Windows.Forms.Button();
-            this.txtPesoB = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPesoTotalB = new System.Windows.Forms.TextBox();
+            this.txtPesoTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTaraB = new System.Windows.Forms.TextBox();
+            this.txtTara = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.grbDatosVariables.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +76,7 @@
             this.grbDatosVariables.Controls.Add(this.txtValidadCert);
             this.grbDatosVariables.Controls.Add(this.label7);
             this.grbDatosVariables.Controls.Add(this.txtCertificado);
-            this.grbDatosVariables.Controls.Add(this.txtPeso);
+            this.grbDatosVariables.Controls.Add(this.txtPesoTk);
             this.grbDatosVariables.Controls.Add(this.txtIdentificadorBulto);
             this.grbDatosVariables.Controls.Add(this.txtNroPermisoEmbarque);
             this.grbDatosVariables.Controls.Add(this.label6);
@@ -137,7 +137,6 @@
             // 
             // cmbMercaderia
             // 
-            this.cmbMercaderia.Enabled = false;
             this.cmbMercaderia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.cmbMercaderia.FormattingEnabled = true;
             this.cmbMercaderia.Location = new System.Drawing.Point(211, 223);
@@ -156,7 +155,6 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Enabled = false;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label10.Location = new System.Drawing.Point(12, 226);
@@ -176,7 +174,6 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Enabled = false;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label9.Location = new System.Drawing.Point(12, 164);
@@ -188,7 +185,6 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Enabled = false;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label8.Location = new System.Drawing.Point(12, 98);
@@ -208,7 +204,6 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Enabled = false;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label7.Location = new System.Drawing.Point(12, 64);
@@ -225,14 +220,14 @@
             this.txtCertificado.Size = new System.Drawing.Size(155, 25);
             this.txtCertificado.TabIndex = 16;
             // 
-            // txtPeso
+            // txtPesoTk
             // 
-            this.txtPeso.Enabled = false;
-            this.txtPeso.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPeso.Location = new System.Drawing.Point(69, 266);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(78, 33);
-            this.txtPeso.TabIndex = 15;
+            this.txtPesoTk.Enabled = false;
+            this.txtPesoTk.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesoTk.Location = new System.Drawing.Point(69, 266);
+            this.txtPesoTk.Name = "txtPesoTk";
+            this.txtPesoTk.Size = new System.Drawing.Size(78, 33);
+            this.txtPesoTk.TabIndex = 15;
             // 
             // txtIdentificadorBulto
             // 
@@ -254,7 +249,6 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Enabled = false;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label6.Location = new System.Drawing.Point(11, 269);
@@ -266,7 +260,6 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(12, 195);
@@ -293,7 +286,6 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Location = new System.Drawing.Point(12, 133);
@@ -305,7 +297,6 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(14, 31);
@@ -316,6 +307,7 @@
             // 
             // txtNroTicket
             // 
+            this.txtNroTicket.Enabled = false;
             this.txtNroTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtNroTicket.Location = new System.Drawing.Point(103, 28);
             this.txtNroTicket.Name = "txtNroTicket";
@@ -337,6 +329,7 @@
             this.cmdStop.Text = "Finaliza Lectura Balanza";
             this.cmdStop.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cmdStop.UseVisualStyleBackColor = false;
+            this.cmdStop.Click += new System.EventHandler(this.cmdStop_Click);
             // 
             // cmdStart
             // 
@@ -354,20 +347,19 @@
             this.cmdStart.UseVisualStyleBackColor = false;
             this.cmdStart.Click += new System.EventHandler(this.cmdStart_Click);
             // 
-            // txtPesoB
+            // txtPeso
             // 
-            this.txtPesoB.Enabled = false;
-            this.txtPesoB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtPesoB.Location = new System.Drawing.Point(131, 62);
-            this.txtPesoB.Name = "txtPesoB";
-            this.txtPesoB.Size = new System.Drawing.Size(69, 25);
-            this.txtPesoB.TabIndex = 23;
-            this.txtPesoB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPeso.Enabled = false;
+            this.txtPeso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtPeso.Location = new System.Drawing.Point(131, 62);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(69, 25);
+            this.txtPeso.TabIndex = 23;
+            this.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(147, 42);
@@ -376,20 +368,19 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Peso";
             // 
-            // txtPesoTotalB
+            // txtPesoTotal
             // 
-            this.txtPesoTotalB.Enabled = false;
-            this.txtPesoTotalB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtPesoTotalB.Location = new System.Drawing.Point(294, 62);
-            this.txtPesoTotalB.Name = "txtPesoTotalB";
-            this.txtPesoTotalB.Size = new System.Drawing.Size(69, 25);
-            this.txtPesoTotalB.TabIndex = 25;
-            this.txtPesoTotalB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPesoTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtPesoTotal.Location = new System.Drawing.Point(294, 62);
+            this.txtPesoTotal.Name = "txtPesoTotal";
+            this.txtPesoTotal.ReadOnly = true;
+            this.txtPesoTotal.Size = new System.Drawing.Size(69, 25);
+            this.txtPesoTotal.TabIndex = 25;
+            this.txtPesoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(291, 42);
@@ -398,20 +389,19 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Peso Total";
             // 
-            // txtTaraB
+            // txtTara
             // 
-            this.txtTaraB.Enabled = false;
-            this.txtTaraB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtTaraB.Location = new System.Drawing.Point(209, 62);
-            this.txtTaraB.Name = "txtTaraB";
-            this.txtTaraB.Size = new System.Drawing.Size(69, 25);
-            this.txtTaraB.TabIndex = 27;
-            this.txtTaraB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTara.Enabled = false;
+            this.txtTara.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtTara.Location = new System.Drawing.Point(209, 62);
+            this.txtTara.Name = "txtTara";
+            this.txtTara.Size = new System.Drawing.Size(69, 25);
+            this.txtTara.TabIndex = 27;
+            this.txtTara.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Enabled = false;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label11.Location = new System.Drawing.Point(224, 42);
@@ -425,11 +415,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 446);
-            this.Controls.Add(this.txtTaraB);
+            this.Controls.Add(this.txtTara);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtPesoTotalB);
+            this.Controls.Add(this.txtPesoTotal);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtPesoB);
+            this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmdStart);
             this.Controls.Add(this.cmdStop);
@@ -455,7 +445,7 @@
         private System.Windows.Forms.TextBox txtValidadCert;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCertificado;
-        private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.TextBox txtPesoTk;
         private System.Windows.Forms.TextBox txtIdentificadorBulto;
         private System.Windows.Forms.TextBox txtNroPermisoEmbarque;
         private System.Windows.Forms.Label label6;
@@ -471,11 +461,11 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button cmdStop;
         private System.Windows.Forms.Button cmdStart;
-        private System.Windows.Forms.TextBox txtPesoB;
+        private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPesoTotalB;
+        private System.Windows.Forms.TextBox txtPesoTotal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTaraB;
+        private System.Windows.Forms.TextBox txtTara;
         private System.Windows.Forms.Label label11;
     }
 }

@@ -129,6 +129,11 @@ namespace Balanza
             }
             catch (Exception ex)
             {
+                MessageBox.Show(String.Format("Error al obtener el proximo Nro de Ticket. Error:{0},{1}", Environment.NewLine, ex.Message)
+                , "Obtener Nro de Ticket",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+               );
                 return false;
 
             }

@@ -152,6 +152,7 @@ namespace Balanza
             string strSql;
             string strFechaDesde = dtpFechaDesde.Value.ToString("yyyy-MM-dd") + " 00:00:00";
             string strFechaHasta = dtpFechaHasta.Value.ToString("yyyy-MM-dd") + " 23:59:59";
+            
 
             LimpiarCampos();
 
@@ -172,7 +173,7 @@ namespace Balanza
 
             if (chkUltimoImpreso.Checked)
             {
-                strSql += " WHERE Impresiones.NroTk =(select max( Impresiones.NroTk) from  Impresiones);";
+                strSql += " WHERE Impresiones.NroTk =(select max( Impresiones.NroTk) from  Impresiones)";
             }
 
             if (chkNroTicket.Checked)
@@ -186,7 +187,7 @@ namespace Balanza
                     txtNrotkBusqueda.Focus();
                     return;
                 }
-                strSql += " WHERE Impresiones.NroTk =" + txtNrotkBusqueda.Text + ";";
+                strSql += " WHERE Impresiones.NroTk =" + txtNrotkBusqueda.Text ;
 
 
             }
@@ -211,19 +212,21 @@ namespace Balanza
             }
             if (chkFechas.Checked && !chkMercaderia.Checked)
             {
-                strSql += " WHERE Impresiones.FechaHora >=#" + strFechaDesde + "# and Impresiones.FechaHora <=#" + strFechaHasta + "#  ;";
+                strSql += " WHERE Impresiones.FechaHora >=#" + strFechaDesde + "# and Impresiones.FechaHora <=#" + strFechaHasta + "# ";
             }
             if (!chkFechas.Checked && chkMercaderia.Checked)
             {
-                strSql = strSql + " WHERE Impresiones.IdMercaderia=" + cmbMercaderia.SelectedValue.ToString() + ";";
+                strSql = strSql + " WHERE Impresiones.IdMercaderia=" + cmbMercaderia.SelectedValue.ToString() ;
 
                 //operativosComboBox.Items[operativosComboBox.SelectedIndex]
             }
             if (chkFechas.Checked && chkMercaderia.Checked)
             {
                 strSql += " WHERE Impresiones.IdMercaderia=" + cmbMercaderia.SelectedValue.ToString() + " and ";
-                strSql += " Impresiones.FechaHora >=#" + strFechaDesde + "# and Impresiones.FechaHora <=#" + strFechaHasta + "#  ;";
+                strSql += " Impresiones.FechaHora >=#" + strFechaDesde + "# and Impresiones.FechaHora <=#" + strFechaHasta + "#  ";
             }
+
+            strSql += " order by Impresiones.IdImpresion;";
 
 
             try
@@ -412,6 +415,11 @@ namespace Balanza
         }
 
         private void txtNrotkBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

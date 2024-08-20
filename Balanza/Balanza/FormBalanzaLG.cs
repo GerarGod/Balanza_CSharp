@@ -20,6 +20,7 @@ namespace Balanza
             {
                 //seteo la clase impresion que voy a mantener durante toda  la aplicacion 
                 ClsGlobalVariables.objImpresion = new ClsImpresion();
+                
 
                 if (!ClsGlobalVariables.objImpresion.CargarDatosEmpresa())
                 {
@@ -48,12 +49,18 @@ namespace Balanza
             try
             {
                 // Leer configuraciones desde App.config
-                ClsGlobalVariables.strConfigPuertoNroCommPort = ConfigurationManager.AppSettings["ConfigPuertoNroCommPort"] ?? "";
+                ClsGlobalVariables.strConfigSerialPortName = ConfigurationManager.AppSettings["serialPortName"] ?? "";
+                ClsGlobalVariables.strConfigSerialPortBaudios = ConfigurationManager.AppSettings["serialPortBaudios"] ?? "";
+                ClsGlobalVariables.strConfigSerialPortParity = ConfigurationManager.AppSettings["serialPortParity"] ?? "";
+                ClsGlobalVariables.strConfigSerialPortBitsDatos = ConfigurationManager.AppSettings["serialPortBitsDatos"] ?? "";
+                ClsGlobalVariables.strConfigserialPortBitsStopBits = ConfigurationManager.AppSettings["serialPortBitsStopBits"] ?? "";
+
+
                 ClsGlobalVariables.strConfigLogDataReceiving = ConfigurationManager.AppSettings["ConfigLogDataReceiving"] ?? "";
 
-                if (ClsGlobalVariables.strConfigPuertoNroCommPort.Length == 0)
+                if (ClsGlobalVariables.strConfigSerialPortName.Length == 0)
                 {
-                    MessageBox.Show("Error reading app settings,no pudo reculerar el valor de strConfigPuertoNroCommPort");
+                    MessageBox.Show("Error reading app settings,no pudo reculerar el valor de strConfigSerialPortName");
                     return;
                 }
                 if (ClsGlobalVariables.strConfigLogDataReceiving.Length == 0)
