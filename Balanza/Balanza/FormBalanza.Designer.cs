@@ -370,10 +370,10 @@
             // 
             // txtPesoTotal
             // 
+            this.txtPesoTotal.Enabled = false;
             this.txtPesoTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtPesoTotal.Location = new System.Drawing.Point(294, 62);
             this.txtPesoTotal.Name = "txtPesoTotal";
-            this.txtPesoTotal.ReadOnly = true;
             this.txtPesoTotal.Size = new System.Drawing.Size(69, 25);
             this.txtPesoTotal.TabIndex = 25;
             this.txtPesoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
