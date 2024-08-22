@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBalanza));
             this.grbDatosVariables = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdbVisualizar = new System.Windows.Forms.RadioButton();
+            this.rdbGenerarArchivoVisualizar = new System.Windows.Forms.RadioButton();
+            this.rdbGenerarArchivo = new System.Windows.Forms.RadioButton();
             this.cmbMercaderia = new System.Windows.Forms.ComboBox();
             this.txtIdentificadorBultoNro = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,9 +64,9 @@
             // 
             // grbDatosVariables
             // 
-            this.grbDatosVariables.Controls.Add(this.radioButton3);
-            this.grbDatosVariables.Controls.Add(this.radioButton1);
-            this.grbDatosVariables.Controls.Add(this.radioButton2);
+            this.grbDatosVariables.Controls.Add(this.rdbVisualizar);
+            this.grbDatosVariables.Controls.Add(this.rdbGenerarArchivoVisualizar);
+            this.grbDatosVariables.Controls.Add(this.rdbGenerarArchivo);
             this.grbDatosVariables.Controls.Add(this.cmbMercaderia);
             this.grbDatosVariables.Controls.Add(this.txtIdentificadorBultoNro);
             this.grbDatosVariables.Controls.Add(this.label10);
@@ -88,52 +88,52 @@
             this.grbDatosVariables.Enabled = false;
             this.grbDatosVariables.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.grbDatosVariables.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.grbDatosVariables.Location = new System.Drawing.Point(15, 113);
+            this.grbDatosVariables.Location = new System.Drawing.Point(15, 117);
             this.grbDatosVariables.Name = "grbDatosVariables";
             this.grbDatosVariables.Size = new System.Drawing.Size(486, 324);
             this.grbDatosVariables.TabIndex = 3;
             this.grbDatosVariables.TabStop = false;
             this.grbDatosVariables.Text = "Datos Variables del Ticket";
             // 
-            // radioButton3
+            // rdbVisualizar
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton3.Location = new System.Drawing.Point(297, 291);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(74, 19);
-            this.radioButton3.TabIndex = 29;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Visualizar";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdbVisualizar.AutoSize = true;
+            this.rdbVisualizar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbVisualizar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rdbVisualizar.Location = new System.Drawing.Point(297, 291);
+            this.rdbVisualizar.Name = "rdbVisualizar";
+            this.rdbVisualizar.Size = new System.Drawing.Size(74, 19);
+            this.rdbVisualizar.TabIndex = 29;
+            this.rdbVisualizar.TabStop = true;
+            this.rdbVisualizar.Text = "Visualizar";
+            this.rdbVisualizar.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdbGenerarArchivoVisualizar
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton1.Location = new System.Drawing.Point(297, 272);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(171, 19);
-            this.radioButton1.TabIndex = 28;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Generar Archivo y Visualizar";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbGenerarArchivoVisualizar.AutoSize = true;
+            this.rdbGenerarArchivoVisualizar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbGenerarArchivoVisualizar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rdbGenerarArchivoVisualizar.Location = new System.Drawing.Point(297, 272);
+            this.rdbGenerarArchivoVisualizar.Name = "rdbGenerarArchivoVisualizar";
+            this.rdbGenerarArchivoVisualizar.Size = new System.Drawing.Size(171, 19);
+            this.rdbGenerarArchivoVisualizar.TabIndex = 28;
+            this.rdbGenerarArchivoVisualizar.TabStop = true;
+            this.rdbGenerarArchivoVisualizar.Text = "Generar Archivo y Visualizar";
+            this.rdbGenerarArchivoVisualizar.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdbGenerarArchivo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton2.Location = new System.Drawing.Point(297, 254);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(110, 19);
-            this.radioButton2.TabIndex = 27;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Generar Archivo";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbGenerarArchivo.AutoSize = true;
+            this.rdbGenerarArchivo.Checked = true;
+            this.rdbGenerarArchivo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbGenerarArchivo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rdbGenerarArchivo.Location = new System.Drawing.Point(297, 254);
+            this.rdbGenerarArchivo.Name = "rdbGenerarArchivo";
+            this.rdbGenerarArchivo.Size = new System.Drawing.Size(110, 19);
+            this.rdbGenerarArchivo.TabIndex = 27;
+            this.rdbGenerarArchivo.TabStop = true;
+            this.rdbGenerarArchivo.Text = "Generar Archivo";
+            this.rdbGenerarArchivo.UseVisualStyleBackColor = true;
             // 
             // cmbMercaderia
             // 
@@ -148,9 +148,11 @@
             // 
             this.txtIdentificadorBultoNro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtIdentificadorBultoNro.Location = new System.Drawing.Point(309, 192);
+            this.txtIdentificadorBultoNro.MaxLength = 3;
             this.txtIdentificadorBultoNro.Name = "txtIdentificadorBultoNro";
             this.txtIdentificadorBultoNro.Size = new System.Drawing.Size(47, 25);
             this.txtIdentificadorBultoNro.TabIndex = 24;
+            this.txtIdentificadorBultoNro.TextChanged += new System.EventHandler(this.txtIdentificadorBultoNro_TextChanged);
             // 
             // label10
             // 
@@ -167,9 +169,11 @@
             // 
             this.txtIDContenedor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtIDContenedor.Location = new System.Drawing.Point(154, 161);
+            this.txtIDContenedor.MaxLength = 30;
             this.txtIDContenedor.Name = "txtIDContenedor";
             this.txtIDContenedor.Size = new System.Drawing.Size(202, 25);
             this.txtIDContenedor.TabIndex = 21;
+            this.txtIDContenedor.TextChanged += new System.EventHandler(this.txtIDContenedor_TextChanged);
             // 
             // label9
             // 
@@ -197,9 +201,11 @@
             // 
             this.txtValidadCert.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtValidadCert.Location = new System.Drawing.Point(103, 95);
+            this.txtValidadCert.MaxLength = 20;
             this.txtValidadCert.Name = "txtValidadCert";
             this.txtValidadCert.Size = new System.Drawing.Size(155, 25);
             this.txtValidadCert.TabIndex = 18;
+            this.txtValidadCert.TextChanged += new System.EventHandler(this.txtValidadCert_TextChanged);
             // 
             // label7
             // 
@@ -216,9 +222,11 @@
             // 
             this.txtCertificado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCertificado.Location = new System.Drawing.Point(103, 61);
+            this.txtCertificado.MaxLength = 20;
             this.txtCertificado.Name = "txtCertificado";
             this.txtCertificado.Size = new System.Drawing.Size(155, 25);
             this.txtCertificado.TabIndex = 16;
+            this.txtCertificado.TextChanged += new System.EventHandler(this.txtCertificado_TextChanged);
             // 
             // txtPesoTk
             // 
@@ -233,18 +241,22 @@
             // 
             this.txtIdentificadorBulto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtIdentificadorBulto.Location = new System.Drawing.Point(165, 192);
+            this.txtIdentificadorBulto.MaxLength = 26;
             this.txtIdentificadorBulto.Name = "txtIdentificadorBulto";
             this.txtIdentificadorBulto.Size = new System.Drawing.Size(138, 25);
             this.txtIdentificadorBulto.TabIndex = 14;
             this.txtIdentificadorBulto.Text = "NUMERO DE PALLET: ";
+            this.txtIdentificadorBulto.TextChanged += new System.EventHandler(this.txtIdentificadorBulto_TextChanged);
             // 
             // txtNroPermisoEmbarque
             // 
             this.txtNroPermisoEmbarque.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtNroPermisoEmbarque.Location = new System.Drawing.Point(211, 130);
+            this.txtNroPermisoEmbarque.MaxLength = 30;
             this.txtNroPermisoEmbarque.Name = "txtNroPermisoEmbarque";
             this.txtNroPermisoEmbarque.Size = new System.Drawing.Size(145, 25);
             this.txtNroPermisoEmbarque.TabIndex = 13;
+            this.txtNroPermisoEmbarque.TextChanged += new System.EventHandler(this.txtNroPermisoEmbarque_TextChanged);
             // 
             // label6
             // 
@@ -275,13 +287,13 @@
             this.cmdGenerarTK.ForeColor = System.Drawing.Color.White;
             this.cmdGenerarTK.Image = ((System.Drawing.Image)(resources.GetObject("cmdGenerarTK.Image")));
             this.cmdGenerarTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmdGenerarTK.Location = new System.Drawing.Point(165, 254);
+            this.cmdGenerarTK.Location = new System.Drawing.Point(154, 254);
             this.cmdGenerarTK.Name = "cmdGenerarTK";
-            this.cmdGenerarTK.Size = new System.Drawing.Size(126, 56);
+            this.cmdGenerarTK.Size = new System.Drawing.Size(137, 56);
             this.cmdGenerarTK.TabIndex = 10;
             this.cmdGenerarTK.Text = "Generar TK";
-            this.cmdGenerarTK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cmdGenerarTK.UseVisualStyleBackColor = false;
+            this.cmdGenerarTK.Click += new System.EventHandler(this.cmdGenerarTK_Click);
             // 
             // label3
             // 
@@ -320,14 +332,12 @@
             this.cmdStop.Enabled = false;
             this.cmdStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cmdStop.ForeColor = System.Drawing.Color.White;
-            this.cmdStop.Image = ((System.Drawing.Image)(resources.GetObject("cmdStop.Image")));
             this.cmdStop.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.cmdStop.Location = new System.Drawing.Point(399, 13);
             this.cmdStop.Name = "cmdStop";
             this.cmdStop.Size = new System.Drawing.Size(99, 90);
             this.cmdStop.TabIndex = 12;
             this.cmdStop.Text = "Finaliza Lectura Balanza";
-            this.cmdStop.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cmdStop.UseVisualStyleBackColor = false;
             this.cmdStop.Click += new System.EventHandler(this.cmdStop_Click);
             // 
@@ -336,14 +346,12 @@
             this.cmdStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
             this.cmdStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cmdStart.ForeColor = System.Drawing.Color.White;
-            this.cmdStart.Image = ((System.Drawing.Image)(resources.GetObject("cmdStart.Image")));
             this.cmdStart.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.cmdStart.Location = new System.Drawing.Point(15, 13);
             this.cmdStart.Name = "cmdStart";
             this.cmdStart.Size = new System.Drawing.Size(99, 90);
             this.cmdStart.TabIndex = 13;
             this.cmdStart.Text = "Inicia Lectura Balanza";
-            this.cmdStart.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cmdStart.UseVisualStyleBackColor = false;
             this.cmdStart.Click += new System.EventHandler(this.cmdStart_Click);
             // 
@@ -414,7 +422,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 446);
+            this.ClientSize = new System.Drawing.Size(513, 451);
             this.Controls.Add(this.txtTara);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtPesoTotal);
@@ -426,6 +434,7 @@
             this.Controls.Add(this.grbDatosVariables);
             this.Name = "FormBalanza";
             this.Text = "FormBalanza";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormBalanza_FormClosing);
             this.Load += new System.EventHandler(this.FormBalanza_Load);
             this.Shown += new System.EventHandler(this.FormBalanza_Shown);
             this.grbDatosVariables.ResumeLayout(false);
@@ -456,9 +465,9 @@
         private System.Windows.Forms.TextBox txtNroTicket;
         private System.Windows.Forms.TextBox txtIdentificadorBultoNro;
         private System.Windows.Forms.ComboBox cmbMercaderia;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdbGenerarArchivo;
+        private System.Windows.Forms.RadioButton rdbVisualizar;
+        private System.Windows.Forms.RadioButton rdbGenerarArchivoVisualizar;
         private System.Windows.Forms.Button cmdStop;
         private System.Windows.Forms.Button cmdStart;
         private System.Windows.Forms.TextBox txtPeso;

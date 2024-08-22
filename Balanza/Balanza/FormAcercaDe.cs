@@ -21,7 +21,6 @@ namespace Balanza
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAcercaDe));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.terminalLabel = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,18 +38,10 @@ namespace Balanza
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 312);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "(C) Copyright LOGICALSYSTEM - By Gerardo Godino 2024";
-            // 
             // terminalLabel
             // 
             this.terminalLabel.AutoSize = true;
+            this.terminalLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.terminalLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.terminalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
             this.terminalLabel.Location = new System.Drawing.Point(135, 193);
@@ -62,6 +53,7 @@ namespace Balanza
             // versionLabel
             // 
             this.versionLabel.AutoSize = true;
+            this.versionLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.versionLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.versionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
             this.versionLabel.Location = new System.Drawing.Point(135, 166);
@@ -73,6 +65,7 @@ namespace Balanza
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
             this.label4.Location = new System.Drawing.Point(72, 166);
@@ -84,6 +77,7 @@ namespace Balanza
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
             this.label3.Location = new System.Drawing.Point(72, 193);
@@ -99,7 +93,6 @@ namespace Balanza
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormAcercaDe";
             this.Load += new System.EventHandler(this.FormAcercaDe_Load);
@@ -120,6 +113,12 @@ namespace Balanza
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             Version v = assembly.GetName().Version;
             versionLabel.Text = v.Major + "." + v.Minor + "." + v.Build /*+ "." + v.Revision*/;
+            // Haciendo el fondo transparente
+            versionLabel.BackColor = Color.Transparent;
+            terminalLabel.BackColor = Color.Transparent;
+            label4.BackColor = Color.Transparent;
+            label3.BackColor = Color.Transparent;
+
         }
     }
 }

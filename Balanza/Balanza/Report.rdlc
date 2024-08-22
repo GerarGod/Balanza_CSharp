@@ -348,7 +348,7 @@
               </Paragraph>
             </Paragraphs>
             <Top>4.70146cm</Top>
-            <Left>11.3821cm</Left>
+            <Left>11.88614cm</Left>
             <Height>0.6cm</Height>
             <Width>3.36902cm</Width>
             <ZIndex>10</ZIndex>
@@ -449,7 +449,7 @@
             <Top>5.6275cm</Top>
             <Left>8.72965cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.65246cm</Width>
+            <Width>2.9801cm</Width>
             <ZIndex>13</ZIndex>
             <Style>
               <Border>
@@ -478,7 +478,7 @@
               </Paragraph>
             </Paragraphs>
             <Top>5.65396cm</Top>
-            <Left>11.3821cm</Left>
+            <Left>11.88614cm</Left>
             <Height>0.6cm</Height>
             <Width>3.36902cm</Width>
             <ZIndex>14</ZIndex>
@@ -829,103 +829,90 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Image Name="Logo">
+            <Source>Embedded</Source>
+            <Value>logoempresa</Value>
+            <Sizing>FitProportional</Sizing>
+            <Left>13.67579cm</Left>
+            <Height>2.4525cm</Height>
+            <Width>2.55833cm</Width>
+            <ZIndex>26</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>FECHA Y HORA:</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>1.0287cm</Top>
+            <Height>0.6cm</Height>
+            <Width>3.34667cm</Width>
+            <ZIndex>27</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="txtFechaHora">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!PtxtFechaHora.Value</Value>
+                    <Style>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.0287cm</Top>
+            <Left>3.48778cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.00403cm</Width>
+            <ZIndex>28</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>12.91333cm</Height>
+        <Height>17.78166cm</Height>
         <Style />
       </Body>
       <Width>17.18662cm</Width>
       <Page>
-        <PageHeader>
-          <Height>3.06917cm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Textbox2">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>FECHA Y HORA:</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>11pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>1.18745cm</Top>
-              <Left>0.86289cm</Left>
-              <Height>0.6cm</Height>
-              <Width>3.34667cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Image Name="Logo">
-              <Source>Embedded</Source>
-              <Value>logoempresa</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>0.44028cm</Top>
-              <Left>14.09912cm</Left>
-              <Height>2.4525cm</Height>
-              <Width>2.55833cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
-            <Textbox Name="txtFechaHora">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Parameters!PtxtFechaHora.Value</Value>
-                      <Style>
-                        <FontSize>11pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <Top>1.18745cm</Top>
-              <Left>4.35067cm</Left>
-              <Height>0.6cm</Height>
-              <Width>4.00403cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageHeader>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>

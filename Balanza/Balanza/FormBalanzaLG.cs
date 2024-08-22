@@ -133,7 +133,7 @@ namespace Balanza
 
         private void menuItemAcercaDe_Click(object sender, EventArgs e)
         {
-            
+            AbrirFormulario<FormAcercaDe>();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -189,6 +189,11 @@ namespace Balanza
             {
                 this.Dispose();
             }
+        }
+
+        private void FormBalanzaLG_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

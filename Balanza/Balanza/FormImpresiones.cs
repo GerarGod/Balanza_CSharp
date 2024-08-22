@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Balanza
@@ -387,16 +388,12 @@ namespace Balanza
 
         private void cmdImprimir_Click(object sender, EventArgs e)
         {
-
-
             //cargo el reporte 
             FormTK objReporte = new FormTK();
-
             objReporte.objTicket = objTicket;
-            
+            objReporte.SetearReporte();
             objReporte.ShowDialog();
-
-
+            objReporte.Dispose();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

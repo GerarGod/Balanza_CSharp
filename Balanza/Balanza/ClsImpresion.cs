@@ -54,6 +54,8 @@ namespace Balanza
             
 
         }
+        
+        
         public bool ObtenerParametros()
         {
 
@@ -148,7 +150,58 @@ namespace Balanza
             return results; // Retornar el DataTable
 
         }
+        public bool InsertarImpresion() {
+            string strSql;
+            try
+            {
+                strSql = "INSERT INTO Impresiones (";
+                strSql += "NroTk,";
+                strSql += "FechaHora,";
+                strSql += "IdEmpresa,";
+                strSql += "CodigoAduana,";
+                strSql += "LotPlanta,";
+                strSql += "LotBalanza,";
+                strSql += "Certificado,";
+                strSql += "ValidadCert,";
+                strSql += "NroPermEmbarque,";
+                strSql += "IdContenedor,";
+                strSql += "IdentificadorBulto,";
+                strSql += "IdMercaderia,";
+                strSql += "Peso) VALUES (";
+                strSql += NroTk.ToString() + ",";
+                strSql += "'" + FechaHora + "',"; /// Format(FechaHora, "yyyy-mm-dd hh:nn:ss") + "',";
+                strSql += IdEmpresa + ",'";
+                strSql += CodigoAduana + "','";
+                strSql += LotPlanta + "','";
+                strSql += LotBalanza + "','";
+                strSql += Certificado + "','";
+                strSql += ValidadCert + "','";
+                strSql += NroPermEmbarque + "','";
+                strSql += IdContenedor + "','";
+                strSql += IdentificadorBulto + "',";
+                strSql += IdMercaderia + ",";
+                strSql += Peso + ")";
+                // Abrir la conexión
+                ClsGlobalVariables.objDB.OpenConnection();
+                int resultado=ClsGlobalVariables.objDB.ExecuteNonQuery(strSql);
 
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(String.Format("Error guardando la Impresion en la base de datos . Error:{0},{1}", Environment.NewLine, ex.Message)
+                , "Insertar Impresion",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+               );
+                return false;
+
+            }
+            finally {
+                // Cerrar la conexión
+                ClsGlobalVariables.objDB.CloseConnection();
+            }
+        }
 
 
     }
