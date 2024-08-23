@@ -283,6 +283,10 @@
             // cmdGenerarTK
             // 
             this.cmdGenerarTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            this.cmdGenerarTK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmdGenerarTK.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(37)))));
+            this.cmdGenerarTK.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(158)))), ((int)(((byte)(81)))));
+            this.cmdGenerarTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdGenerarTK.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.cmdGenerarTK.ForeColor = System.Drawing.Color.White;
             this.cmdGenerarTK.Image = ((System.Drawing.Image)(resources.GetObject("cmdGenerarTK.Image")));
@@ -329,7 +333,11 @@
             // cmdStop
             // 
             this.cmdStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            this.cmdStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmdStop.Enabled = false;
+            this.cmdStop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(37)))));
+            this.cmdStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(158)))), ((int)(((byte)(81)))));
+            this.cmdStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cmdStop.ForeColor = System.Drawing.Color.White;
             this.cmdStop.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -344,6 +352,10 @@
             // cmdStart
             // 
             this.cmdStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            this.cmdStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmdStart.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(37)))));
+            this.cmdStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(158)))), ((int)(((byte)(81)))));
+            this.cmdStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cmdStart.ForeColor = System.Drawing.Color.White;
             this.cmdStart.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -432,8 +444,9 @@
             this.Controls.Add(this.cmdStart);
             this.Controls.Add(this.cmdStop);
             this.Controls.Add(this.grbDatosVariables);
+            this.MaximumSize = new System.Drawing.Size(529, 490);
             this.Name = "FormBalanza";
-            this.Text = "FormBalanza";
+            this.Text = "Balanza";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormBalanza_FormClosing);
             this.Load += new System.EventHandler(this.FormBalanza_Load);
             this.Shown += new System.EventHandler(this.FormBalanza_Shown);

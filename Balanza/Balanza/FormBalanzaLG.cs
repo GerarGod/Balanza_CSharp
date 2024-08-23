@@ -195,6 +195,12 @@ namespace Balanza
         {
 
         }
+
+        private void menuItemConfiguraciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormConfiguraciones>();
+            
+        }
     }
 }
 //https://www.microsoft.com/en-us/microsoft-365/blog/2010/05/10/download-access-2010-runtime-database-engine-redistributable-and-source-code-control/

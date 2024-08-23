@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -202,6 +203,41 @@ namespace Balanza
                 ClsGlobalVariables.objDB.CloseConnection();
             }
         }
+
+        public bool GurdarParametros()
+        {
+            string strSql;
+            int resultado;
+            try
+            {
+                // Abrir la conexión
+                ClsGlobalVariables.objDB.OpenConnection();
+
+                strSql = $"update Parametros set ValorText='{Certificado}' where CodParametro ='Certificado'";
+                resultado = ClsGlobalVariables.objDB.ExecuteNonQuery(strSql);
+
+                strSql = $"update Parametros set ValorText='{ValidadCert}' where CodParametro ='ValidadCert'";
+                resultado = ClsGlobalVariables.objDB.ExecuteNonQuery(strSql);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(String.Format("Error guardando datos en la  base de datos . Error:{0},{1}", Environment.NewLine, ex.Message)
+                , "Insertar Impresion",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+               );
+                return false;
+
+            }
+            finally
+            {
+                // Cerrar la conexión
+                ClsGlobalVariables.objDB.CloseConnection();
+            }
+        }
+        
 
 
     }

@@ -42,6 +42,7 @@ namespace Balanza
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemBalanza,
@@ -51,6 +52,7 @@ namespace Balanza
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(1085, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -59,27 +61,28 @@ namespace Balanza
             // menuItemBalanza
             // 
             this.menuItemBalanza.Name = "menuItemBalanza";
-            this.menuItemBalanza.Size = new System.Drawing.Size(59, 20);
+            this.menuItemBalanza.Size = new System.Drawing.Size(73, 24);
             this.menuItemBalanza.Text = "Balanza";
             this.menuItemBalanza.Click += new System.EventHandler(this.menuItemBalanza_Click);
             // 
             // menuItemImpresiones
             // 
             this.menuItemImpresiones.Name = "menuItemImpresiones";
-            this.menuItemImpresiones.Size = new System.Drawing.Size(83, 20);
+            this.menuItemImpresiones.Size = new System.Drawing.Size(101, 24);
             this.menuItemImpresiones.Text = "Impresiones";
             this.menuItemImpresiones.Click += new System.EventHandler(this.menuItemImpresiones_Click);
             // 
             // menuItemConfiguraciones
             // 
             this.menuItemConfiguraciones.Name = "menuItemConfiguraciones";
-            this.menuItemConfiguraciones.Size = new System.Drawing.Size(106, 20);
+            this.menuItemConfiguraciones.Size = new System.Drawing.Size(128, 24);
             this.menuItemConfiguraciones.Text = "Configuraciones";
+            this.menuItemConfiguraciones.Click += new System.EventHandler(this.menuItemConfiguraciones_Click);
             // 
             // menuItemAcercaDe
             // 
             this.menuItemAcercaDe.Name = "menuItemAcercaDe";
-            this.menuItemAcercaDe.Size = new System.Drawing.Size(72, 20);
+            this.menuItemAcercaDe.Size = new System.Drawing.Size(89, 24);
             this.menuItemAcercaDe.Text = "Acerca De";
             this.menuItemAcercaDe.Click += new System.EventHandler(this.menuItemAcercaDe_Click);
             // 
