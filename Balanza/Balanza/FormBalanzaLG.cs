@@ -220,3 +220,9 @@ namespace Balanza
 //Ejemplo de comando para instalar en modo pasivo:
 
 ///Microsoft Access 2013 Runtime https://www.microsoft.com/es-es/download/details.aspx?id=39358
+///
+
+
+////[ProgramFiles64Folder][Manufacturer]\[ProductName]
+
+//https://www.youtube.com/watch?v=c2NmtvENu3s
