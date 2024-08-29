@@ -1,4 +1,7 @@
-﻿namespace Balanza
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace Balanza
 {
     partial class FormBalanzaLG
     {
@@ -28,75 +31,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            menuItemBalanza = new ToolStripMenuItem();
-            menuItemImpresiones = new ToolStripMenuItem();
-            menuItemConfiguraciones = new ToolStripMenuItem();
-            menuItemAcercaDe = new ToolStripMenuItem();
-            panelPrincipalBalanza = new Panel();
-            menuStrip1.SuspendLayout();
-            SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuItemBalanza = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemImpresiones = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemConfiguraciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelPrincipalBalanza = new System.Windows.Forms.Panel();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menuItemBalanza, menuItemImpresiones, menuItemConfiguraciones, menuItemAcercaDe });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1038, 24);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
-            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemBalanza,
+            this.menuItemImpresiones,
+            this.menuItemConfiguraciones,
+            this.menuItemAcercaDe});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(1085, 28);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // menuItemBalanza
             // 
-            menuItemBalanza.Name = "menuItemBalanza";
-            menuItemBalanza.Size = new Size(59, 20);
-            menuItemBalanza.Text = "Balanza";
-            menuItemBalanza.Click += menuItemBalanza_Click;
+            this.menuItemBalanza.Name = "menuItemBalanza";
+            this.menuItemBalanza.Size = new System.Drawing.Size(73, 24);
+            this.menuItemBalanza.Text = "Balanza";
+            this.menuItemBalanza.Click += new System.EventHandler(this.menuItemBalanza_Click);
             // 
             // menuItemImpresiones
             // 
-            menuItemImpresiones.Name = "menuItemImpresiones";
-            menuItemImpresiones.Size = new Size(83, 20);
-            menuItemImpresiones.Text = "Impresiones";
-            menuItemImpresiones.Click += menuItemImpresiones_Click;
+            this.menuItemImpresiones.Name = "menuItemImpresiones";
+            this.menuItemImpresiones.Size = new System.Drawing.Size(101, 24);
+            this.menuItemImpresiones.Text = "Impresiones";
+            this.menuItemImpresiones.Click += new System.EventHandler(this.menuItemImpresiones_Click);
             // 
             // menuItemConfiguraciones
             // 
-            menuItemConfiguraciones.Name = "menuItemConfiguraciones";
-            menuItemConfiguraciones.Size = new Size(106, 20);
-            menuItemConfiguraciones.Text = "Configuraciones";
+            this.menuItemConfiguraciones.Name = "menuItemConfiguraciones";
+            this.menuItemConfiguraciones.Size = new System.Drawing.Size(128, 24);
+            this.menuItemConfiguraciones.Text = "Configuraciones";
+            this.menuItemConfiguraciones.Click += new System.EventHandler(this.menuItemConfiguraciones_Click);
             // 
             // menuItemAcercaDe
             // 
-            menuItemAcercaDe.Name = "menuItemAcercaDe";
-            menuItemAcercaDe.Size = new Size(72, 20);
-            menuItemAcercaDe.Text = "Acerca De";
-            menuItemAcercaDe.Click += menuItemAcercaDe_Click;
+            this.menuItemAcercaDe.Name = "menuItemAcercaDe";
+            this.menuItemAcercaDe.Size = new System.Drawing.Size(89, 24);
+            this.menuItemAcercaDe.Text = "Acerca De";
+            this.menuItemAcercaDe.Click += new System.EventHandler(this.menuItemAcercaDe_Click);
             // 
             // panelPrincipalBalanza
             // 
-            panelPrincipalBalanza.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelPrincipalBalanza.Location = new Point(0, 27);
-            panelPrincipalBalanza.Name = "panelPrincipalBalanza";
-            panelPrincipalBalanza.Size = new Size(1038, 537);
-            panelPrincipalBalanza.TabIndex = 1;
+            this.panelPrincipalBalanza.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelPrincipalBalanza.Location = new System.Drawing.Point(0, 31);
+            this.panelPrincipalBalanza.Name = "panelPrincipalBalanza";
+            this.panelPrincipalBalanza.Size = new System.Drawing.Size(1085, 655);
+            this.panelPrincipalBalanza.TabIndex = 1;
+            this.panelPrincipalBalanza.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrincipalBalanza_Paint);
             // 
             // FormBalanzaLG
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1038, 564);
-            Controls.Add(panelPrincipalBalanza);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
-            Name = "FormBalanzaLG";
-            Text = "Balanza LG";
-            Load += FormBalanzaLG_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1085, 687);
+            this.Controls.Add(this.panelPrincipalBalanza);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "FormBalanzaLG";
+            this.Text = "Balanza LG";
+            this.Load += new System.EventHandler(this.FormBalanzaLG_Load_1);
+            this.Shown += new System.EventHandler(this.FormBalanzaLG_Shown);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

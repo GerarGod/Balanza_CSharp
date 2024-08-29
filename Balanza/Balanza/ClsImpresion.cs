@@ -1,55 +1,19 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Windows.Forms;
+//using static System.ComponentModel.Design.ObjectSelectorEditor;
+//using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Balanza
 {
-    public class ClsImpresion
+    public class ClsImpresion: ClsTicketEntidad
     {
-        private long nroTk;// As Long
-        private long idImpresion;//  As Long
-        private DateTime fechaHora;// As Date
-        private long idEmpresa;//  As Long
-        private string razonSocial;//  As String
 
-        private string cUIT;//  As String
-        private string codigoAduana;//  As String
-        private string lotPlanta;//  As String
-        private string lotBalanza;//  As String
-
-        private string certificado;//  As String
-        private string validadCert;//  As String
-        private string nroPermEmbarque;//  As String
-        private string idContenedor;//  As String
-        private string identificadorBulto;//  As String
-        private string idMercaderia;//  As Long
-        private string mercaderia;//  As String
-        private string peso;//  As Long
-
-        public long NroTk { get => nroTk; set => nroTk = value; }
-        public long IdImpresion { get => idImpresion; set => idImpresion = value; }
-        public DateTime FechaHora { get => fechaHora; set => fechaHora = value; }
-        public long IdEmpresa { get => idEmpresa; set => idEmpresa = value; }
-        public string RazonSocial { get => razonSocial; set => razonSocial = value; }
-
-        public string CUIT { get => cUIT; set => cUIT = value; }
-        public string CodigoAduana { get => codigoAduana; set => codigoAduana = value; }
-        public string LotPlanta { get => lotPlanta; set => lotPlanta = value; }
-        public string LotBalanza { get => lotBalanza; set => lotBalanza = value; }
-
-        public string Certificado { get => certificado; set => certificado = value; }
-        public string ValidadCert { get => validadCert; set => validadCert = value; }
-        public string NroPermEmbarque { get => nroPermEmbarque; set => nroPermEmbarque = value; }
-        public string IdContenedor { get => idContenedor; set => idContenedor = value; }
-        public string IdentificadorBulto { get => identificadorBulto; set => identificadorBulto = value; }
-        public string IdMercaderia { get => idMercaderia; set => idMercaderia = value; }
-        public string Mercaderia { get => mercaderia; set => mercaderia = value; }
-        public string Peso { get => peso; set => peso = value; }
 
         public bool CargarDatosEmpresa()
         {
@@ -63,9 +27,9 @@ namespace Balanza
                 DataTable results = ClsGlobalVariables.objDB.ExecuteQuery(selectQuery);
                 foreach (DataRow row in results.Rows)
                 {
-                    idEmpresa=long.Parse(row["IdEmpresa"].ToString());
-                    razonSocial=row["RazonSocial"].ToString();
-                    cUIT=row["RazonSocial"].ToString();
+                    IdEmpresa=long.Parse(row["IdEmpresa"].ToString());
+                    RazonSocial=row["RazonSocial"].ToString();
+                    CUIT=row["RazonSocial"].ToString();
                 }
 
                 /*
@@ -80,12 +44,19 @@ namespace Balanza
             }
             catch (Exception ex)
             {
+                MessageBox.Show(String.Format("Error al cargar los datos de Empresa. Error:{0},{1}", Environment.NewLine, ex.Message)
+                , "Inicio de Datos",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+               );
                 return false;
 
             }
             
 
         }
+        
+        
         public bool ObtenerParametros()
         {
 
@@ -102,19 +73,19 @@ namespace Balanza
                     switch (row["CodParametro"].ToString())
                     {
                         case "Certificado":
-                            certificado = row["ValorText"].ToString();
+                            Certificado = row["ValorText"].ToString();
                             break;
                         case "ValidadCert":
-                            validadCert = row["ValorText"].ToString();
+                            ValidadCert = row["ValorText"].ToString();
                             break;
                         case "CodigoAduana":
-                            codigoAduana = row["ValorText"].ToString();
+                            CodigoAduana = row["ValorText"].ToString();
                             break;
                         case "LotPlanta":
-                            lotPlanta = row["ValorText"].ToString();
+                            LotPlanta = row["ValorText"].ToString();
                             break;
                         case "LotBalanza":
-                            lotBalanza = row["ValorText"].ToString();
+                            LotBalanza = row["ValorText"].ToString();
                             break;
                     }
                 }
@@ -124,6 +95,11 @@ namespace Balanza
             }
             catch (Exception ex)
             {
+                MessageBox.Show(String.Format("Error al cargar los datos de Parametros. Error:{0},{1}", Environment.NewLine, ex.Message)
+                , "Inicio de Datos",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+               );
                 return false;
 
             }
@@ -143,11 +119,11 @@ namespace Balanza
 
                     if (DBNull.Value.Equals(row["Ultimo"]) )
                     {
-                        nroTk = 1;
+                        NroTk = 1;
                     }
                     else
                     {
-                        nroTk = long.Parse(row["Ultimo"].ToString()) + 1;
+                        NroTk = long.Parse(row["Ultimo"].ToString()) + 1;
                     }
                 }
                 // Cerrar la conexión
@@ -156,6 +132,11 @@ namespace Balanza
             }
             catch (Exception ex)
             {
+                MessageBox.Show(String.Format("Error al obtener el proximo Nro de Ticket. Error:{0},{1}", Environment.NewLine, ex.Message)
+                , "Obtener Nro de Ticket",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+               );
                 return false;
 
             }
@@ -170,7 +151,93 @@ namespace Balanza
             return results; // Retornar el DataTable
 
         }
+        public bool InsertarImpresion() {
+            string strSql;
+            try
+            {
+                strSql = "INSERT INTO Impresiones (";
+                strSql += "NroTk,";
+                strSql += "FechaHora,";
+                strSql += "IdEmpresa,";
+                strSql += "CodigoAduana,";
+                strSql += "LotPlanta,";
+                strSql += "LotBalanza,";
+                strSql += "Certificado,";
+                strSql += "ValidadCert,";
+                strSql += "NroPermEmbarque,";
+                strSql += "IdContenedor,";
+                strSql += "IdentificadorBulto,";
+                strSql += "IdMercaderia,";
+                strSql += "Peso) VALUES (";
+                strSql += NroTk.ToString() + ",";
+                strSql += "'" + FechaHora + "',"; /// Format(FechaHora, "yyyy-mm-dd hh:nn:ss") + "',";
+                strSql += IdEmpresa + ",'";
+                strSql += CodigoAduana + "','";
+                strSql += LotPlanta + "','";
+                strSql += LotBalanza + "','";
+                strSql += Certificado + "','";
+                strSql += ValidadCert + "','";
+                strSql += NroPermEmbarque + "','";
+                strSql += IdContenedor + "','";
+                strSql += IdentificadorBulto + "',";
+                strSql += IdMercaderia + ",";
+                strSql += Peso + ")";
+                // Abrir la conexión
+                ClsGlobalVariables.objDB.OpenConnection();
+                int resultado=ClsGlobalVariables.objDB.ExecuteNonQuery(strSql);
 
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(String.Format("Error guardando la Impresion en la base de datos . Error:{0},{1}", Environment.NewLine, ex.Message)
+                , "Insertar Impresion",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+               );
+                return false;
+
+            }
+            finally {
+                // Cerrar la conexión
+                ClsGlobalVariables.objDB.CloseConnection();
+            }
+        }
+
+        public bool GurdarParametros()
+        {
+            string strSql;
+            int resultado;
+            try
+            {
+                // Abrir la conexión
+                ClsGlobalVariables.objDB.OpenConnection();
+
+                strSql = $"update Parametros set ValorText='{Certificado}' where CodParametro ='Certificado'";
+                resultado = ClsGlobalVariables.objDB.ExecuteNonQuery(strSql);
+
+                strSql = $"update Parametros set ValorText='{ValidadCert}' where CodParametro ='ValidadCert'";
+                resultado = ClsGlobalVariables.objDB.ExecuteNonQuery(strSql);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(String.Format("Error guardando datos en la  base de datos . Error:{0},{1}", Environment.NewLine, ex.Message)
+                , "Insertar Impresion",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+               );
+                return false;
+
+            }
+            finally
+            {
+                // Cerrar la conexión
+                ClsGlobalVariables.objDB.CloseConnection();
+            }
+        }
+        
 
 
     }

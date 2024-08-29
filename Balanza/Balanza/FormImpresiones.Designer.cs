@@ -29,654 +29,698 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImpresiones));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            groupBox1 = new GroupBox();
-            cmbMercaderia = new ComboBox();
-            label2 = new Label();
-            dtpFechaHasta = new DateTimePicker();
-            label1 = new Label();
-            dtpFechaDesde = new DateTimePicker();
-            txtNrotkBusqueda = new TextBox();
-            cmdBuscar = new Button();
-            chkMercaderia = new CheckBox();
-            chkFechas = new CheckBox();
-            chkNroTicket = new CheckBox();
-            chkUltimoImpreso = new CheckBox();
-            dgwImpreciones = new DataGridView();
-            IdImpresion = new DataGridViewTextBoxColumn();
-            NroTk = new DataGridViewTextBoxColumn();
-            FechaHora = new DataGridViewTextBoxColumn();
-            RazonSocial = new DataGridViewTextBoxColumn();
-            CUIT = new DataGridViewTextBoxColumn();
-            CodigoAduana = new DataGridViewTextBoxColumn();
-            LotPlanta = new DataGridViewTextBoxColumn();
-            LotBalanza = new DataGridViewTextBoxColumn();
-            Certificado = new DataGridViewTextBoxColumn();
-            ValidadCert = new DataGridViewTextBoxColumn();
-            NroPermEmbarque = new DataGridViewTextBoxColumn();
-            IdContenedor = new DataGridViewTextBoxColumn();
-            IdentificadorBulto = new DataGridViewTextBoxColumn();
-            Mercaderia = new DataGridViewTextBoxColumn();
-            Peso = new DataGridViewTextBoxColumn();
-            groupBox2 = new GroupBox();
-            txtPeso = new TextBox();
-            label10 = new Label();
-            txtMercaderia = new TextBox();
-            label8 = new Label();
-            txtIdentificadorBultoTxt = new TextBox();
-            label9 = new Label();
-            txtIDContenedor = new TextBox();
-            label3 = new Label();
-            txtNroPermisoEmbarque = new TextBox();
-            label7 = new Label();
-            txtValidadCert = new TextBox();
-            label6 = new Label();
-            txtCertificado = new TextBox();
-            label5 = new Label();
-            label4 = new Label();
-            txtNroTicket = new TextBox();
-            cmdImprimir = new Button();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgwImpreciones).BeginInit();
-            groupBox2.SuspendLayout();
-            SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmdBuscar = new System.Windows.Forms.Button();
+            this.cmbMercaderia = new System.Windows.Forms.ComboBox();
+            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNrotkBusqueda = new System.Windows.Forms.TextBox();
+            this.chkMercaderia = new System.Windows.Forms.CheckBox();
+            this.chkFechas = new System.Windows.Forms.CheckBox();
+            this.chkNroTicket = new System.Windows.Forms.CheckBox();
+            this.chkUltimoImpreso = new System.Windows.Forms.CheckBox();
+            this.dgwImpreciones = new System.Windows.Forms.DataGridView();
+            this.IdImpresion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroTk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoAduana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LotPlanta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LotBalanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Certificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValidadCert = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroPermEmbarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdContenedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdentificadorBulto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mercaderia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtMercaderia = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtIDContenedor = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtValidadCert = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCertificado = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.txtIdentificadorBultoTxt = new System.Windows.Forms.TextBox();
+            this.txtNroPermisoEmbarque = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmdImprimir = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNroTicket = new System.Windows.Forms.TextBox();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwImpreciones)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(cmbMercaderia);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(dtpFechaHasta);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(dtpFechaDesde);
-            groupBox1.Controls.Add(txtNrotkBusqueda);
-            groupBox1.Controls.Add(cmdBuscar);
-            groupBox1.Controls.Add(chkMercaderia);
-            groupBox1.Controls.Add(chkFechas);
-            groupBox1.Controls.Add(chkNroTicket);
-            groupBox1.Controls.Add(chkUltimoImpreso);
-            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.ForeColor = SystemColors.MenuHighlight;
-            groupBox1.Location = new Point(11, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1054, 154);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Opciones de búsqueda";
-            // 
-            // cmbMercaderia
-            // 
-            cmbMercaderia.Enabled = false;
-            cmbMercaderia.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cmbMercaderia.FormattingEnabled = true;
-            cmbMercaderia.Location = new Point(127, 114);
-            cmbMercaderia.Name = "cmbMercaderia";
-            cmbMercaderia.Size = new Size(328, 25);
-            cmbMercaderia.TabIndex = 8;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Enabled = false;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.InfoText;
-            label2.Location = new Point(302, 86);
-            label2.Name = "label2";
-            label2.Size = new Size(47, 17);
-            label2.TabIndex = 11;
-            label2.Text = "Hasta:";
-            // 
-            // dtpFechaHasta
-            // 
-            dtpFechaHasta.CustomFormat = "dd/MM/yyyy";
-            dtpFechaHasta.Enabled = false;
-            dtpFechaHasta.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dtpFechaHasta.Location = new Point(353, 82);
-            dtpFechaHasta.Name = "dtpFechaHasta";
-            dtpFechaHasta.Size = new Size(104, 25);
-            dtpFechaHasta.TabIndex = 6;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Enabled = false;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.InfoText;
-            label1.Location = new Point(140, 88);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 17);
-            label1.TabIndex = 9;
-            label1.Text = "Desde:";
-            // 
-            // dtpFechaDesde
-            // 
-            dtpFechaDesde.CustomFormat = "dd/MM/yyyy";
-            dtpFechaDesde.Enabled = false;
-            dtpFechaDesde.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dtpFechaDesde.Location = new Point(191, 84);
-            dtpFechaDesde.Name = "dtpFechaDesde";
-            dtpFechaDesde.Size = new Size(104, 25);
-            dtpFechaDesde.TabIndex = 5;
-            // 
-            // txtNrotkBusqueda
-            // 
-            txtNrotkBusqueda.Enabled = false;
-            txtNrotkBusqueda.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtNrotkBusqueda.Location = new Point(140, 54);
-            txtNrotkBusqueda.Name = "txtNrotkBusqueda";
-            txtNrotkBusqueda.Size = new Size(155, 25);
-            txtNrotkBusqueda.TabIndex = 3;
-            txtNrotkBusqueda.KeyPress += txtNrotkBusqueda_KeyPress;
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.cmdBuscar);
+            this.groupBox1.Controls.Add(this.cmbMercaderia);
+            this.groupBox1.Controls.Add(this.dtpFechaHasta);
+            this.groupBox1.Controls.Add(this.dtpFechaDesde);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtNrotkBusqueda);
+            this.groupBox1.Controls.Add(this.chkMercaderia);
+            this.groupBox1.Controls.Add(this.chkFechas);
+            this.groupBox1.Controls.Add(this.chkNroTicket);
+            this.groupBox1.Controls.Add(this.chkUltimoImpreso);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.groupBox1.Location = new System.Drawing.Point(12, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1054, 154);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Opciones de búsqueda";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cmdBuscar
             // 
-            cmdBuscar.Image = (Image)resources.GetObject("cmdBuscar.Image");
-            cmdBuscar.ImageAlign = ContentAlignment.TopCenter;
-            cmdBuscar.Location = new Point(937, 35);
-            cmdBuscar.Name = "cmdBuscar";
-            cmdBuscar.Size = new Size(95, 73);
-            cmdBuscar.TabIndex = 9;
-            cmdBuscar.Text = "Buscar";
-            cmdBuscar.TextAlign = ContentAlignment.BottomCenter;
-            cmdBuscar.UseVisualStyleBackColor = true;
-            cmdBuscar.Click += cmdBuscar_Click;
+            this.cmdBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            this.cmdBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmdBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(37)))));
+            this.cmdBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(158)))), ((int)(((byte)(81)))));
+            this.cmdBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdBuscar.ForeColor = System.Drawing.Color.White;
+            this.cmdBuscar.Image = ((System.Drawing.Image)(resources.GetObject("cmdBuscar.Image")));
+            this.cmdBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cmdBuscar.Location = new System.Drawing.Point(935, 51);
+            this.cmdBuscar.Name = "cmdBuscar";
+            this.cmdBuscar.Size = new System.Drawing.Size(95, 73);
+            this.cmdBuscar.TabIndex = 10;
+            this.cmdBuscar.Text = "Buscar";
+            this.cmdBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cmdBuscar.UseVisualStyleBackColor = false;
+            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
+            // 
+            // cmbMercaderia
+            // 
+            this.cmbMercaderia.Enabled = false;
+            this.cmbMercaderia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmbMercaderia.FormattingEnabled = true;
+            this.cmbMercaderia.Location = new System.Drawing.Point(147, 114);
+            this.cmbMercaderia.Name = "cmbMercaderia";
+            this.cmbMercaderia.Size = new System.Drawing.Size(328, 25);
+            this.cmbMercaderia.TabIndex = 9;
+            // 
+            // dtpFechaHasta
+            // 
+            this.dtpFechaHasta.Enabled = false;
+            this.dtpFechaHasta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(371, 84);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(104, 25);
+            this.dtpFechaHasta.TabIndex = 8;
+            // 
+            // dtpFechaDesde
+            // 
+            this.dtpFechaDesde.Enabled = false;
+            this.dtpFechaDesde.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dtpFechaDesde.Location = new System.Drawing.Point(205, 84);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(104, 25);
+            this.dtpFechaDesde.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(315, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Hasta:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(144, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Desde:";
+            // 
+            // txtNrotkBusqueda
+            // 
+            this.txtNrotkBusqueda.Enabled = false;
+            this.txtNrotkBusqueda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtNrotkBusqueda.Location = new System.Drawing.Point(147, 52);
+            this.txtNrotkBusqueda.Name = "txtNrotkBusqueda";
+            this.txtNrotkBusqueda.Size = new System.Drawing.Size(155, 25);
+            this.txtNrotkBusqueda.TabIndex = 4;
+            this.txtNrotkBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNrotkBusqueda.TextChanged += new System.EventHandler(this.txtNrotkBusqueda_TextChanged);
             // 
             // chkMercaderia
             // 
-            chkMercaderia.AutoSize = true;
-            chkMercaderia.Enabled = false;
-            chkMercaderia.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            chkMercaderia.ForeColor = SystemColors.ControlText;
-            chkMercaderia.Location = new Point(11, 116);
-            chkMercaderia.Name = "chkMercaderia";
-            chkMercaderia.Size = new Size(95, 21);
-            chkMercaderia.TabIndex = 7;
-            chkMercaderia.Text = "Mercaderia";
-            chkMercaderia.UseVisualStyleBackColor = true;
-            chkMercaderia.CheckedChanged += chkMercaderia_CheckedChanged;
+            this.chkMercaderia.AutoSize = true;
+            this.chkMercaderia.Enabled = false;
+            this.chkMercaderia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.chkMercaderia.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkMercaderia.Location = new System.Drawing.Point(18, 117);
+            this.chkMercaderia.Name = "chkMercaderia";
+            this.chkMercaderia.Size = new System.Drawing.Size(95, 21);
+            this.chkMercaderia.TabIndex = 3;
+            this.chkMercaderia.Text = "Mercaderia";
+            this.chkMercaderia.UseVisualStyleBackColor = true;
+            this.chkMercaderia.CheckedChanged += new System.EventHandler(this.chkMercaderia_CheckedChanged);
             // 
             // chkFechas
             // 
-            chkFechas.AutoSize = true;
-            chkFechas.Enabled = false;
-            chkFechas.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            chkFechas.ForeColor = SystemColors.ControlText;
-            chkFechas.Location = new Point(11, 89);
-            chkFechas.Name = "chkFechas";
-            chkFechas.Size = new Size(68, 21);
-            chkFechas.TabIndex = 4;
-            chkFechas.Text = "Fechas";
-            chkFechas.UseVisualStyleBackColor = true;
-            chkFechas.CheckedChanged += chkFechas_CheckedChanged;
+            this.chkFechas.AutoSize = true;
+            this.chkFechas.Enabled = false;
+            this.chkFechas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.chkFechas.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkFechas.Location = new System.Drawing.Point(18, 87);
+            this.chkFechas.Name = "chkFechas";
+            this.chkFechas.Size = new System.Drawing.Size(68, 21);
+            this.chkFechas.TabIndex = 2;
+            this.chkFechas.Text = "Fechas";
+            this.chkFechas.UseVisualStyleBackColor = true;
+            this.chkFechas.CheckedChanged += new System.EventHandler(this.chkFechas_CheckedChanged);
             // 
             // chkNroTicket
             // 
-            chkNroTicket.AutoSize = true;
-            chkNroTicket.Enabled = false;
-            chkNroTicket.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            chkNroTicket.ForeColor = SystemColors.ControlText;
-            chkNroTicket.Location = new Point(11, 62);
-            chkNroTicket.Name = "chkNroTicket";
-            chkNroTicket.Size = new Size(91, 21);
-            chkNroTicket.TabIndex = 2;
-            chkNroTicket.Text = "Nro Ticket";
-            chkNroTicket.UseVisualStyleBackColor = true;
-            chkNroTicket.CheckedChanged += chkNroTicket_CheckedChanged;
+            this.chkNroTicket.AutoSize = true;
+            this.chkNroTicket.Enabled = false;
+            this.chkNroTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.chkNroTicket.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkNroTicket.Location = new System.Drawing.Point(18, 54);
+            this.chkNroTicket.Name = "chkNroTicket";
+            this.chkNroTicket.Size = new System.Drawing.Size(91, 21);
+            this.chkNroTicket.TabIndex = 1;
+            this.chkNroTicket.Text = "Nro Ticket";
+            this.chkNroTicket.UseVisualStyleBackColor = true;
+            this.chkNroTicket.CheckedChanged += new System.EventHandler(this.chkNroTicket_CheckedChanged);
             // 
             // chkUltimoImpreso
             // 
-            chkUltimoImpreso.AutoSize = true;
-            chkUltimoImpreso.Checked = true;
-            chkUltimoImpreso.CheckState = CheckState.Checked;
-            chkUltimoImpreso.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            chkUltimoImpreso.ForeColor = SystemColors.ControlText;
-            chkUltimoImpreso.Location = new Point(11, 35);
-            chkUltimoImpreso.Name = "chkUltimoImpreso";
-            chkUltimoImpreso.Size = new Size(123, 21);
-            chkUltimoImpreso.TabIndex = 1;
-            chkUltimoImpreso.Text = "Ultimo Impreso";
-            chkUltimoImpreso.UseVisualStyleBackColor = true;
-            chkUltimoImpreso.CheckedChanged += chkUltimoImpreso_CheckedChanged;
+            this.chkUltimoImpreso.AutoSize = true;
+            this.chkUltimoImpreso.Checked = true;
+            this.chkUltimoImpreso.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkUltimoImpreso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.chkUltimoImpreso.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkUltimoImpreso.Location = new System.Drawing.Point(18, 26);
+            this.chkUltimoImpreso.Name = "chkUltimoImpreso";
+            this.chkUltimoImpreso.Size = new System.Drawing.Size(123, 21);
+            this.chkUltimoImpreso.TabIndex = 0;
+            this.chkUltimoImpreso.Text = "Ultimo Impreso";
+            this.chkUltimoImpreso.UseVisualStyleBackColor = true;
+            this.chkUltimoImpreso.CheckedChanged += new System.EventHandler(this.chkUltimoImpreso_CheckedChanged);
             // 
             // dgwImpreciones
             // 
-            dgwImpreciones.AllowUserToAddRows = false;
-            dgwImpreciones.AllowUserToDeleteRows = false;
-            dgwImpreciones.AllowUserToOrderColumns = true;
-            dgwImpreciones.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            dgwImpreciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgwImpreciones.BackgroundColor = Color.FromArgb(140, 200, 255);
-            dgwImpreciones.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(47, 158, 81);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgwImpreciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgwImpreciones.ColumnHeadersHeight = 30;
-            dgwImpreciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgwImpreciones.Columns.AddRange(new DataGridViewColumn[] { IdImpresion, NroTk, FechaHora, RazonSocial, CUIT, CodigoAduana, LotPlanta, LotBalanza, Certificado, ValidadCert, NroPermEmbarque, IdContenedor, IdentificadorBulto, Mercaderia, Peso });
-            dgwImpreciones.Cursor = Cursors.Hand;
-            dgwImpreciones.EnableHeadersVisualStyles = false;
-            dgwImpreciones.GridColor = Color.FromArgb(0, 122, 204);
-            dgwImpreciones.Location = new Point(11, 170);
-            dgwImpreciones.Name = "dgwImpreciones";
-            dgwImpreciones.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(29, 84, 148);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 195, 0);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgwImpreciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgwImpreciones.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(140, 200, 255);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(29, 84, 148);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(140, 240, 250);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(29, 84, 148);
-            dgwImpreciones.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgwImpreciones.Size = new Size(1054, 236);
-            dgwImpreciones.TabIndex = 10;
-            dgwImpreciones.CellClick += dgwImpreciones_CellContentClick;
-            dgwImpreciones.CellContentClick += dgwImpreciones_CellContentClick;
-            dgwImpreciones.SelectionChanged += dgwImpreciones_SelectionChanged;
+            this.dgwImpreciones.AllowUserToAddRows = false;
+            this.dgwImpreciones.AllowUserToDeleteRows = false;
+            this.dgwImpreciones.AllowUserToOrderColumns = true;
+            this.dgwImpreciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dgwImpreciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgwImpreciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.dgwImpreciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(158)))), ((int)(((byte)(81)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwImpreciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgwImpreciones.ColumnHeadersHeight = 30;
+            this.dgwImpreciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgwImpreciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdImpresion,
+            this.NroTk,
+            this.FechaHora,
+            this.RazonSocial,
+            this.CUIT,
+            this.CodigoAduana,
+            this.LotPlanta,
+            this.LotBalanza,
+            this.Certificado,
+            this.ValidadCert,
+            this.NroPermEmbarque,
+            this.IdContenedor,
+            this.IdentificadorBulto,
+            this.Mercaderia,
+            this.Peso});
+            this.dgwImpreciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgwImpreciones.EnableHeadersVisualStyles = false;
+            this.dgwImpreciones.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.dgwImpreciones.Location = new System.Drawing.Point(11, 170);
+            this.dgwImpreciones.Name = "dgwImpreciones";
+            this.dgwImpreciones.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwImpreciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgwImpreciones.RowHeadersVisible = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(240)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            this.dgwImpreciones.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgwImpreciones.Size = new System.Drawing.Size(1054, 236);
+            this.dgwImpreciones.TabIndex = 1;
+            this.dgwImpreciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwImpreciones_CellClick);
+            this.dgwImpreciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwImpreciones_CellContentClick);
+            this.dgwImpreciones.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwImpreciones_CellEnter);
             // 
             // IdImpresion
             // 
-            IdImpresion.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            IdImpresion.DataPropertyName = "IdImpresion";
-            IdImpresion.HeaderText = "Id Impresion";
-            IdImpresion.Name = "IdImpresion";
-            IdImpresion.ReadOnly = true;
-            IdImpresion.Visible = false;
+            this.IdImpresion.DataPropertyName = "IdImpresion";
+            this.IdImpresion.HeaderText = "Id Impresion";
+            this.IdImpresion.Name = "IdImpresion";
+            this.IdImpresion.ReadOnly = true;
+            this.IdImpresion.Visible = false;
+            this.IdImpresion.Width = 98;
             // 
             // NroTk
             // 
-            NroTk.DataPropertyName = "NroTk";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            NroTk.DefaultCellStyle = dataGridViewCellStyle2;
-            NroTk.HeaderText = "Nro Tk";
-            NroTk.Name = "NroTk";
-            NroTk.ReadOnly = true;
-            NroTk.Width = 66;
+            this.NroTk.DataPropertyName = "NroTk";
+            this.NroTk.HeaderText = "Nro Tk";
+            this.NroTk.Name = "NroTk";
+            this.NroTk.ReadOnly = true;
+            this.NroTk.Width = 66;
             // 
             // FechaHora
             // 
-            FechaHora.DataPropertyName = "FechaHora";
-            FechaHora.HeaderText = "Fecha Hora";
-            FechaHora.Name = "FechaHora";
-            FechaHora.ReadOnly = true;
-            FechaHora.Width = 91;
+            this.FechaHora.DataPropertyName = "FechaHora";
+            this.FechaHora.HeaderText = "Fecha Hora";
+            this.FechaHora.Name = "FechaHora";
+            this.FechaHora.ReadOnly = true;
+            this.FechaHora.Width = 91;
             // 
             // RazonSocial
             // 
-            RazonSocial.DataPropertyName = "RazonSocial";
-            RazonSocial.HeaderText = "Razon Social";
-            RazonSocial.Name = "RazonSocial";
-            RazonSocial.ReadOnly = true;
-            RazonSocial.Visible = false;
+            this.RazonSocial.DataPropertyName = "RazonSocial";
+            this.RazonSocial.HeaderText = "Razon Social";
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
+            this.RazonSocial.Visible = false;
+            this.RazonSocial.Width = 98;
             // 
             // CUIT
             // 
-            CUIT.DataPropertyName = "CUIT";
-            CUIT.HeaderText = "CUIT";
-            CUIT.Name = "CUIT";
-            CUIT.ReadOnly = true;
-            CUIT.Visible = false;
+            this.CUIT.DataPropertyName = "CUIT";
+            this.CUIT.HeaderText = "CUIT";
+            this.CUIT.Name = "CUIT";
+            this.CUIT.ReadOnly = true;
+            this.CUIT.Visible = false;
+            this.CUIT.Width = 57;
             // 
             // CodigoAduana
             // 
-            CodigoAduana.DataPropertyName = "CodigoAduana";
-            CodigoAduana.HeaderText = "Codigo Aduana";
-            CodigoAduana.Name = "CodigoAduana";
-            CodigoAduana.ReadOnly = true;
-            CodigoAduana.Visible = false;
+            this.CodigoAduana.DataPropertyName = "CodigoAduana";
+            this.CodigoAduana.HeaderText = "Codigo Aduana";
+            this.CodigoAduana.Name = "CodigoAduana";
+            this.CodigoAduana.ReadOnly = true;
+            this.CodigoAduana.Visible = false;
+            this.CodigoAduana.Width = 115;
             // 
             // LotPlanta
             // 
-            LotPlanta.DataPropertyName = "LotPlanta";
-            LotPlanta.HeaderText = "Lot Planta";
-            LotPlanta.Name = "LotPlanta";
-            LotPlanta.ReadOnly = true;
-            LotPlanta.Visible = false;
+            this.LotPlanta.DataPropertyName = "LotPlanta";
+            this.LotPlanta.HeaderText = "Lot Planta";
+            this.LotPlanta.Name = "LotPlanta";
+            this.LotPlanta.ReadOnly = true;
+            this.LotPlanta.Visible = false;
+            this.LotPlanta.Width = 85;
             // 
             // LotBalanza
             // 
-            LotBalanza.DataPropertyName = "LotBalanza";
-            LotBalanza.HeaderText = "Lot Balanza";
-            LotBalanza.Name = "LotBalanza";
-            LotBalanza.ReadOnly = true;
-            LotBalanza.Visible = false;
+            this.LotBalanza.DataPropertyName = "LotBalanza";
+            this.LotBalanza.HeaderText = "Lot Balanza";
+            this.LotBalanza.Name = "LotBalanza";
+            this.LotBalanza.ReadOnly = true;
+            this.LotBalanza.Visible = false;
+            this.LotBalanza.Width = 92;
             // 
             // Certificado
             // 
-            Certificado.DataPropertyName = "Certificado";
-            Certificado.HeaderText = "Certificado";
-            Certificado.Name = "Certificado";
-            Certificado.ReadOnly = true;
-            Certificado.Width = 89;
+            this.Certificado.DataPropertyName = "Certificado";
+            this.Certificado.HeaderText = "Certificado";
+            this.Certificado.Name = "Certificado";
+            this.Certificado.ReadOnly = true;
+            this.Certificado.Width = 89;
             // 
             // ValidadCert
             // 
-            ValidadCert.DataPropertyName = "ValidadCert";
-            ValidadCert.HeaderText = "Validad Cert";
-            ValidadCert.Name = "ValidadCert";
-            ValidadCert.ReadOnly = true;
-            ValidadCert.Width = 94;
+            this.ValidadCert.DataPropertyName = "ValidadCert";
+            this.ValidadCert.HeaderText = "Validad Cert";
+            this.ValidadCert.Name = "ValidadCert";
+            this.ValidadCert.ReadOnly = true;
+            this.ValidadCert.Width = 94;
             // 
             // NroPermEmbarque
             // 
-            NroPermEmbarque.DataPropertyName = "NroPermEmbarque";
-            NroPermEmbarque.HeaderText = "Nro Permso Embarque";
-            NroPermEmbarque.Name = "NroPermEmbarque";
-            NroPermEmbarque.ReadOnly = true;
-            NroPermEmbarque.Width = 151;
+            this.NroPermEmbarque.DataPropertyName = "NroPermEmbarque";
+            this.NroPermEmbarque.HeaderText = "Nro Permso Embarquev";
+            this.NroPermEmbarque.Name = "NroPermEmbarque";
+            this.NroPermEmbarque.ReadOnly = true;
+            this.NroPermEmbarque.Width = 157;
             // 
             // IdContenedor
             // 
-            IdContenedor.DataPropertyName = "IdContenedor";
-            IdContenedor.HeaderText = "Id Contenedor";
-            IdContenedor.Name = "IdContenedor";
-            IdContenedor.ReadOnly = true;
-            IdContenedor.Width = 107;
+            this.IdContenedor.DataPropertyName = "IdContenedor";
+            this.IdContenedor.HeaderText = "Id Contenedor";
+            this.IdContenedor.Name = "IdContenedor";
+            this.IdContenedor.ReadOnly = true;
+            this.IdContenedor.Width = 107;
             // 
             // IdentificadorBulto
             // 
-            IdentificadorBulto.DataPropertyName = "IdentificadorBulto";
-            IdentificadorBulto.HeaderText = "Identificador Bulto";
-            IdentificadorBulto.Name = "IdentificadorBulto";
-            IdentificadorBulto.ReadOnly = true;
-            IdentificadorBulto.Width = 129;
+            this.IdentificadorBulto.DataPropertyName = "IdentificadorBulto";
+            this.IdentificadorBulto.HeaderText = "Identificador Bulto";
+            this.IdentificadorBulto.Name = "IdentificadorBulto";
+            this.IdentificadorBulto.ReadOnly = true;
+            this.IdentificadorBulto.Width = 129;
             // 
             // Mercaderia
             // 
-            Mercaderia.DataPropertyName = "Mercaderia";
-            Mercaderia.HeaderText = "Mercaderia";
-            Mercaderia.Name = "Mercaderia";
-            Mercaderia.ReadOnly = true;
-            Mercaderia.Width = 90;
+            this.Mercaderia.DataPropertyName = "Mercaderia";
+            this.Mercaderia.HeaderText = "Mercaderia";
+            this.Mercaderia.Name = "Mercaderia";
+            this.Mercaderia.ReadOnly = true;
+            this.Mercaderia.Width = 90;
             // 
             // Peso
             // 
-            Peso.DataPropertyName = "Peso";
-            Peso.HeaderText = "Peso";
-            Peso.Name = "Peso";
-            Peso.ReadOnly = true;
-            Peso.Width = 56;
+            this.Peso.DataPropertyName = "Peso";
+            this.Peso.HeaderText = "Peso";
+            this.Peso.Name = "Peso";
+            this.Peso.ReadOnly = true;
+            this.Peso.Width = 56;
             // 
             // groupBox2
             // 
-            groupBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            groupBox2.Controls.Add(txtPeso);
-            groupBox2.Controls.Add(label10);
-            groupBox2.Controls.Add(txtMercaderia);
-            groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(txtIdentificadorBultoTxt);
-            groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(txtIDContenedor);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(txtNroPermisoEmbarque);
-            groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(txtValidadCert);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(txtCertificado);
-            groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(txtNroTicket);
-            groupBox2.Controls.Add(cmdImprimir);
-            groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.ForeColor = SystemColors.MenuHighlight;
-            groupBox2.Location = new Point(11, 412);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1054, 154);
-            groupBox2.TabIndex = 11;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Ticket";
-            // 
-            // txtPeso
-            // 
-            txtPeso.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPeso.Location = new Point(210, 121);
-            txtPeso.Name = "txtPeso";
-            txtPeso.ReadOnly = true;
-            txtPeso.Size = new Size(202, 25);
-            txtPeso.TabIndex = 25;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.ForeColor = SystemColors.InfoText;
-            label10.Location = new Point(11, 124);
-            label10.Name = "label10";
-            label10.Size = new Size(41, 17);
-            label10.TabIndex = 24;
-            label10.Text = "Peso:";
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupBox2.Controls.Add(this.txtMercaderia);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtIDContenedor);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtValidadCert);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtCertificado);
+            this.groupBox2.Controls.Add(this.txtPeso);
+            this.groupBox2.Controls.Add(this.txtIdentificadorBultoTxt);
+            this.groupBox2.Controls.Add(this.txtNroPermisoEmbarque);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.cmdImprimir);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtNroTicket);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.groupBox2.Location = new System.Drawing.Point(12, 412);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1054, 154);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ticket";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtMercaderia
             // 
-            txtMercaderia.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtMercaderia.Location = new Point(611, 88);
-            txtMercaderia.Name = "txtMercaderia";
-            txtMercaderia.ReadOnly = true;
-            txtMercaderia.Size = new Size(202, 25);
-            txtMercaderia.TabIndex = 23;
+            this.txtMercaderia.Enabled = false;
+            this.txtMercaderia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtMercaderia.Location = new System.Drawing.Point(611, 88);
+            this.txtMercaderia.Name = "txtMercaderia";
+            this.txtMercaderia.Size = new System.Drawing.Size(202, 25);
+            this.txtMercaderia.TabIndex = 23;
             // 
-            // label8
+            // label10
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = SystemColors.InfoText;
-            label8.Location = new Point(412, 91);
-            label8.Name = "label8";
-            label8.Size = new Size(190, 17);
-            label8.TabIndex = 22;
-            label8.Text = "Descripcion de la Mercaderia:";
-            // 
-            // txtIdentificadorBultoTxt
-            // 
-            txtIdentificadorBultoTxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtIdentificadorBultoTxt.Location = new Point(210, 88);
-            txtIdentificadorBultoTxt.Name = "txtIdentificadorBultoTxt";
-            txtIdentificadorBultoTxt.ReadOnly = true;
-            txtIdentificadorBultoTxt.Size = new Size(202, 25);
-            txtIdentificadorBultoTxt.TabIndex = 21;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = SystemColors.InfoText;
-            label9.Location = new Point(11, 91);
-            label9.Name = "label9";
-            label9.Size = new Size(147, 17);
-            label9.TabIndex = 20;
-            label9.Text = "Identificador de Bulto:";
+            this.label10.AutoSize = true;
+            this.label10.Enabled = false;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(418, 91);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(190, 17);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Descripcion de la Mercaderia:";
             // 
             // txtIDContenedor
             // 
-            txtIDContenedor.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtIDContenedor.Location = new Point(611, 57);
-            txtIDContenedor.Name = "txtIDContenedor";
-            txtIDContenedor.ReadOnly = true;
-            txtIDContenedor.Size = new Size(202, 25);
-            txtIDContenedor.TabIndex = 19;
+            this.txtIDContenedor.Enabled = false;
+            this.txtIDContenedor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtIDContenedor.Location = new System.Drawing.Point(611, 57);
+            this.txtIDContenedor.Name = "txtIDContenedor";
+            this.txtIDContenedor.Size = new System.Drawing.Size(202, 25);
+            this.txtIDContenedor.TabIndex = 21;
             // 
-            // label3
+            // label9
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.InfoText;
-            label3.Location = new Point(412, 60);
-            label3.Name = "label3";
-            label3.Size = new Size(122, 17);
-            label3.TabIndex = 18;
-            label3.Text = "ID de Contenedor:";
+            this.label9.AutoSize = true;
+            this.label9.Enabled = false;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.Location = new System.Drawing.Point(418, 60);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 17);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Id de Contenedor:";
             // 
-            // txtNroPermisoEmbarque
+            // label8
             // 
-            txtNroPermisoEmbarque.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtNroPermisoEmbarque.Location = new Point(210, 57);
-            txtNroPermisoEmbarque.Name = "txtNroPermisoEmbarque";
-            txtNroPermisoEmbarque.ReadOnly = true;
-            txtNroPermisoEmbarque.Size = new Size(202, 25);
-            txtNroPermisoEmbarque.TabIndex = 17;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = SystemColors.InfoText;
-            label7.Location = new Point(518, 33);
-            label7.Name = "label7";
-            label7.Size = new Size(87, 17);
-            label7.TabIndex = 16;
-            label7.Text = "Validad Cert:";
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label8.Location = new System.Drawing.Point(518, 33);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 17);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Validad Cert:";
             // 
             // txtValidadCert
             // 
-            txtValidadCert.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtValidadCert.Location = new Point(611, 26);
-            txtValidadCert.Name = "txtValidadCert";
-            txtValidadCert.ReadOnly = true;
-            txtValidadCert.Size = new Size(155, 25);
-            txtValidadCert.TabIndex = 15;
+            this.txtValidadCert.Enabled = false;
+            this.txtValidadCert.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtValidadCert.Location = new System.Drawing.Point(611, 26);
+            this.txtValidadCert.Name = "txtValidadCert";
+            this.txtValidadCert.Size = new System.Drawing.Size(155, 25);
+            this.txtValidadCert.TabIndex = 18;
             // 
-            // label6
+            // label7
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = SystemColors.InfoText;
-            label6.Location = new Point(258, 34);
-            label6.Name = "label6";
-            label6.Size = new Size(79, 17);
-            label6.TabIndex = 14;
-            label6.Text = "Certificado:";
+            this.label7.AutoSize = true;
+            this.label7.Enabled = false;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(258, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 17);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Certificado:";
             // 
             // txtCertificado
             // 
-            txtCertificado.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtCertificado.Location = new Point(340, 27);
-            txtCertificado.Name = "txtCertificado";
-            txtCertificado.ReadOnly = true;
-            txtCertificado.Size = new Size(155, 25);
-            txtCertificado.TabIndex = 13;
+            this.txtCertificado.Enabled = false;
+            this.txtCertificado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtCertificado.Location = new System.Drawing.Point(340, 27);
+            this.txtCertificado.Name = "txtCertificado";
+            this.txtCertificado.Size = new System.Drawing.Size(155, 25);
+            this.txtCertificado.TabIndex = 16;
+            // 
+            // txtPeso
+            // 
+            this.txtPeso.Enabled = false;
+            this.txtPeso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtPeso.Location = new System.Drawing.Point(210, 119);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(202, 25);
+            this.txtPeso.TabIndex = 15;
+            // 
+            // txtIdentificadorBultoTxt
+            // 
+            this.txtIdentificadorBultoTxt.Enabled = false;
+            this.txtIdentificadorBultoTxt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtIdentificadorBultoTxt.Location = new System.Drawing.Point(210, 88);
+            this.txtIdentificadorBultoTxt.Name = "txtIdentificadorBultoTxt";
+            this.txtIdentificadorBultoTxt.Size = new System.Drawing.Size(202, 25);
+            this.txtIdentificadorBultoTxt.TabIndex = 14;
+            // 
+            // txtNroPermisoEmbarque
+            // 
+            this.txtNroPermisoEmbarque.Enabled = false;
+            this.txtNroPermisoEmbarque.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtNroPermisoEmbarque.Location = new System.Drawing.Point(210, 57);
+            this.txtNroPermisoEmbarque.Name = "txtNroPermisoEmbarque";
+            this.txtNroPermisoEmbarque.Size = new System.Drawing.Size(202, 25);
+            this.txtNroPermisoEmbarque.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Enabled = false;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(11, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Peso:";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.InfoText;
-            label5.Location = new Point(11, 35);
-            label5.Name = "label5";
-            label5.Size = new Size(76, 17);
-            label5.TabIndex = 12;
-            label5.Text = "Nro Ticket:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.InfoText;
-            label4.Location = new Point(11, 60);
-            label4.Name = "label4";
-            label4.Size = new Size(193, 17);
-            label4.TabIndex = 9;
-            label4.Text = "Nro de Permiso de Embarque:";
-            // 
-            // txtNroTicket
-            // 
-            txtNroTicket.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtNroTicket.Location = new Point(93, 28);
-            txtNroTicket.Name = "txtNroTicket";
-            txtNroTicket.ReadOnly = true;
-            txtNroTicket.Size = new Size(155, 25);
-            txtNroTicket.TabIndex = 3;
+            this.label5.AutoSize = true;
+            this.label5.Enabled = false;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(11, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(147, 17);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Identificador de Bulto:";
             // 
             // cmdImprimir
             // 
-            cmdImprimir.Image = (Image)resources.GetObject("cmdImprimir.Image");
-            cmdImprimir.Location = new Point(937, 57);
-            cmdImprimir.Name = "cmdImprimir";
-            cmdImprimir.Size = new Size(95, 73);
-            cmdImprimir.TabIndex = 9;
-            cmdImprimir.Text = "Imprimir";
-            cmdImprimir.TextAlign = ContentAlignment.BottomCenter;
-            cmdImprimir.UseVisualStyleBackColor = true;
+            this.cmdImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            this.cmdImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmdImprimir.Enabled = false;
+            this.cmdImprimir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(37)))));
+            this.cmdImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(158)))), ((int)(((byte)(81)))));
+            this.cmdImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdImprimir.ForeColor = System.Drawing.Color.White;
+            this.cmdImprimir.Image = ((System.Drawing.Image)(resources.GetObject("cmdImprimir.Image")));
+            this.cmdImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cmdImprimir.Location = new System.Drawing.Point(935, 51);
+            this.cmdImprimir.Name = "cmdImprimir";
+            this.cmdImprimir.Size = new System.Drawing.Size(95, 73);
+            this.cmdImprimir.TabIndex = 10;
+            this.cmdImprimir.Text = "Imprimir";
+            this.cmdImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cmdImprimir.UseVisualStyleBackColor = false;
+            this.cmdImprimir.Click += new System.EventHandler(this.cmdImprimir_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Enabled = false;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(11, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(193, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Nro de Permiso de Embarque:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Enabled = false;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(11, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Nro Ticket:";
+            // 
+            // txtNroTicket
+            // 
+            this.txtNroTicket.Enabled = false;
+            this.txtNroTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtNroTicket.Location = new System.Drawing.Point(93, 28);
+            this.txtNroTicket.Name = "txtNroTicket";
+            this.txtNroTicket.Size = new System.Drawing.Size(155, 25);
+            this.txtNroTicket.TabIndex = 4;
+            this.txtNroTicket.TextChanged += new System.EventHandler(this.txtNroTicket_TextChanged);
             // 
             // FormImpresiones
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1069, 572);
-            Controls.Add(groupBox2);
-            Controls.Add(dgwImpreciones);
-            Controls.Add(groupBox1);
-            Name = "FormImpresiones";
-            Text = "Impresiones";
-            Load += FormImpresiones_Load;
-            Shown += FormImpresiones_Shown;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgwImpreciones).EndInit();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1069, 572);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.dgwImpreciones);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "FormImpresiones";
+            this.Text = "Impresiones";
+            this.Load += new System.EventHandler(this.FormImpresiones_Load);
+            this.Shown += new System.EventHandler(this.FormImpresiones_Shown);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwImpreciones)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
 
-        private GroupBox groupBox1;
-        private CheckBox chkMercaderia;
-        private CheckBox chkFechas;
-        private CheckBox chkNroTicket;
-        private CheckBox chkUltimoImpreso;
-        private TextBox txtNrotkBusqueda;
-        private Button cmdBuscar;
-        private DateTimePicker dtpFechaDesde;
-        private Label label2;
-        private DateTimePicker dtpFechaHasta;
-        private Label label1;
-        private ComboBox cmbMercaderia;
-        private DataGridView dgwImpreciones;
-        private GroupBox groupBox2;
-        private Label label7;
-        private TextBox txtValidadCert;
-        private Label label6;
-        private TextBox txtCertificado;
-        private Label label5;
-        private Label label4;
-        private TextBox txtNroTicket;
-        private Button cmdImprimir;
-        private TextBox txtPeso;
-        private Label label10;
-        private TextBox txtMercaderia;
-        private Label label8;
-        private TextBox txtIdentificadorBultoTxt;
-        private Label label9;
-        private TextBox txtIDContenedor;
-        private Label label3;
-        private TextBox txtNroPermisoEmbarque;
-        private DataGridViewTextBoxColumn IdImpresion;
-        private DataGridViewTextBoxColumn NroTk;
-        private DataGridViewTextBoxColumn FechaHora;
-        private DataGridViewTextBoxColumn RazonSocial;
-        private DataGridViewTextBoxColumn CUIT;
-        private DataGridViewTextBoxColumn CodigoAduana;
-        private DataGridViewTextBoxColumn LotPlanta;
-        private DataGridViewTextBoxColumn LotBalanza;
-        private DataGridViewTextBoxColumn Certificado;
-        private DataGridViewTextBoxColumn ValidadCert;
-        private DataGridViewTextBoxColumn NroPermEmbarque;
-        private DataGridViewTextBoxColumn IdContenedor;
-        private DataGridViewTextBoxColumn IdentificadorBulto;
-        private DataGridViewTextBoxColumn Mercaderia;
-        private DataGridViewTextBoxColumn Peso;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox chkMercaderia;
+        private System.Windows.Forms.CheckBox chkFechas;
+        private System.Windows.Forms.CheckBox chkNroTicket;
+        private System.Windows.Forms.CheckBox chkUltimoImpreso;
+        private System.Windows.Forms.TextBox txtNrotkBusqueda;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbMercaderia;
+        private System.Windows.Forms.DateTimePicker dtpFechaHasta;
+        private System.Windows.Forms.DateTimePicker dtpFechaDesde;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button cmdBuscar;
+        private System.Windows.Forms.DataGridView dgwImpreciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdImpresion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroTk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaHora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUIT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoAduana;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LotPlanta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LotBalanza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Certificado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValidadCert;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroPermEmbarque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdContenedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdentificadorBulto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mercaderia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Peso;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button cmdImprimir;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtNroTicket;
+        private System.Windows.Forms.TextBox txtNroPermisoEmbarque;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtValidadCert;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCertificado;
+        private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.TextBox txtIdentificadorBultoTxt;
+        private System.Windows.Forms.TextBox txtMercaderia;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtIDContenedor;
+        private System.Windows.Forms.Label label9;
     }
 }

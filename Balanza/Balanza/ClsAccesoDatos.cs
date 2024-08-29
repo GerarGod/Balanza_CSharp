@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
-
+using System.Windows.Forms;
 using Microsoft.Win32;
 
 
@@ -20,7 +20,7 @@ namespace Balanza
             if (strDatabasePath == "default" || strDatabasePath.Length==0 ) {
                 strDatabasePath = System.Windows.Forms.Application.StartupPath;
             }
-            strDatabasePath = strDatabasePath + "DB_BASSO.accdb";
+            strDatabasePath = strDatabasePath + "\\DB_BASSO.accdb";
 
             _connectionString = $@"Provider={strProvider};Data Source={strDatabasePath};Jet OLEDB:Database Password=gerargod"; // Using recommended version 12.0 for Access 2010
 
@@ -50,6 +50,7 @@ namespace Balanza
                     if (aceProvider != null)
                     {
                         Console.WriteLine($"Microsoft Access está instalado. Utiliza el proveedor: {aceProvider}");
+                        MessageBox.Show($"Microsoft Access está instalado. Utiliza el proveedor: {aceProvider}");
                     }
                     else
                     {
@@ -63,10 +64,7 @@ namespace Balanza
 
                     MessageBox.Show($"Ocurrió un error al detectar la versión de Access: {exx.Message}");
                 }
-
-
-
-
+                throw;
             }
         }
 

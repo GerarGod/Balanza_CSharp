@@ -1,5 +1,7 @@
-using Microsoft.Win32;
+ï»¿using Microsoft.Win32;
+using System;
 using System.Configuration;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Balanza
@@ -8,6 +10,7 @@ namespace Balanza
     {
         string strDB_Source;
         string strDB_Provider;
+        bool blnIncicioFormularioSinError = false;
         public FormBalanzaLG()
         {
             InitializeComponent();
@@ -17,22 +20,27 @@ namespace Balanza
             {
                 //seteo la clase impresion que voy a mantener durante toda  la aplicacion 
                 ClsGlobalVariables.objImpresion = new ClsImpresion();
+                
 
                 if (!ClsGlobalVariables.objImpresion.CargarDatosEmpresa())
                 {
+                    return;
                 }
                 if (!ClsGlobalVariables.objImpresion.ObtenerParametros())
                 {
+                    return;
                 }
                 //if (!ClsGlobalVariables.objImpresion.ObtenerProximoNroTk())
                 //{
                 //}
 
 
-
+                blnIncicioFormularioSinError = true;
 
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) {
+                return;
+                Console.WriteLine(ex.Message); }
 
         }
 
@@ -41,12 +49,18 @@ namespace Balanza
             try
             {
                 // Leer configuraciones desde App.config
-                ClsGlobalVariables.strConfigPuertoNroCommPort = ConfigurationManager.AppSettings["ConfigPuertoNroCommPort"] ?? "";
+                ClsGlobalVariables.strConfigSerialPortName = ConfigurationManager.AppSettings["serialPortName"] ?? "";
+                ClsGlobalVariables.strConfigSerialPortBaudios = ConfigurationManager.AppSettings["serialPortBaudios"] ?? "";
+                ClsGlobalVariables.strConfigSerialPortParity = ConfigurationManager.AppSettings["serialPortParity"] ?? "";
+                ClsGlobalVariables.strConfigSerialPortBitsDatos = ConfigurationManager.AppSettings["serialPortBitsDatos"] ?? "";
+                ClsGlobalVariables.strConfigserialPortBitsStopBits = ConfigurationManager.AppSettings["serialPortBitsStopBits"] ?? "";
+
+
                 ClsGlobalVariables.strConfigLogDataReceiving = ConfigurationManager.AppSettings["ConfigLogDataReceiving"] ?? "";
 
-                if (ClsGlobalVariables.strConfigPuertoNroCommPort.Length == 0)
+                if (ClsGlobalVariables.strConfigSerialPortName.Length == 0)
                 {
-                    MessageBox.Show("Error reading app settings,no pudo reculerar el valor de strConfigPuertoNroCommPort");
+                    MessageBox.Show("Error reading app settings,no pudo reculerar el valor de strConfigSerialPortName");
                     return;
                 }
                 if (ClsGlobalVariables.strConfigLogDataReceiving.Length == 0)
@@ -113,8 +127,7 @@ namespace Balanza
 
         private void menuItemBalanza_Click(object sender, EventArgs e)
         {
-
-
+                AbrirFormulario<FormBalanza>();
 
         }
 
@@ -162,6 +175,30 @@ namespace Balanza
         {
             AbrirFormulario<FormImpresiones>();
 
+
+        }
+
+        private void panelPrincipalBalanza_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormBalanzaLG_Shown(object sender, EventArgs e)
+        {
+            if (!blnIncicioFormularioSinError)
+            {
+                this.Dispose();
+            }
+        }
+
+        private void FormBalanzaLG_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuItemConfiguraciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormConfiguraciones>();
             
         }
     }
@@ -170,16 +207,22 @@ namespace Balanza
 //Si no tienes instalado Microsoft Access pero deseas trabajar con archivos de base de datos Access (.mdb o .accdb) en tu sistema, puedes seguir estos pasos para configurar tu entorno y asegurarte de que puedas conectarte a la base de datos:
 
 //1.Instalar el Controlador de Access Database Engine
-//Para poder trabajar con bases de datos de Access sin tener Microsoft Access instalado, necesitas instalar el controlador de Microsoft Access Database Engine. Este controlador permite a las aplicaciones acceder a datos almacenados en archivos de Access. Aquí te explico cómo hacerlo:
+//Para poder trabajar con bases de datos de Access sin tener Microsoft Access instalado, necesitas instalar el controlador de Microsoft Access Database Engine. Este controlador permite a las aplicaciones acceder a datos almacenados en archivos de Access. AquÃ­ te explico cÃ³mo hacerlo:
 
 //Descargar el Access Database Engine:
 //Access Database Engine 2010: Puedes descargar el controlador desde el Centro de descarga de Microsoft.
-//Access Database Engine 2016: También está disponible en el Centro de descarga de Microsoft.
-//2. Consideraciones de instalación
-//Compatibilidad de versiones: Asegúrate de descargar la versión que sea compatible con la arquitectura de tu sistema operativo (32 bits o 64 bits). También asegúrate de que la versión del controlador sea compatible con la versión de Office instalada (si la tienes).
+//Access Database Engine 2016: TambiÃ©n estÃ¡ disponible en el Centro de descarga de Microsoft.
+//2. Consideraciones de instalaciÃ³n
+//Compatibilidad de versiones: AsegÃºrate de descargar la versiÃ³n que sea compatible con la arquitectura de tu sistema operativo (32 bits o 64 bits). TambiÃ©n asegÃºrate de que la versiÃ³n del controlador sea compatible con la versiÃ³n de Office instalada (si la tienes).
 
-//Conflictos de instalación: Si ya tienes una versión de Office instalada que no coincide con la arquitectura del controlador que intentas instalar (por ejemplo, Office de 32 bits con un controlador de 64 bits), puede que necesites desinstalar Office temporalmente o usar el parámetro de instalación Passive para forzar la instalación del controlador.
+//Conflictos de instalaciÃ³n: Si ya tienes una versiÃ³n de Office instalada que no coincide con la arquitectura del controlador que intentas instalar (por ejemplo, Office de 32 bits con un controlador de 64 bits), puede que necesites desinstalar Office temporalmente o usar el parÃ¡metro de instalaciÃ³n Passive para forzar la instalaciÃ³n del controlador.
 
 //Ejemplo de comando para instalar en modo pasivo:
 
 ///Microsoft Access 2013 Runtime https://www.microsoft.com/es-es/download/details.aspx?id=39358
+///
+
+
+////[ProgramFiles64Folder][Manufacturer]\[ProductName]
+
+//https://www.youtube.com/watch?v=c2NmtvENu3s

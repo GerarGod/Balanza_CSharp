@@ -10,14 +10,16 @@ namespace Balanza
 {
     public class ClsGlobalVariables//
     {
-        public static string strConfigPuertoNroCommPort="";
+        public static string strConfigSerialPortName = "";
+        public static string strConfigSerialPortBaudios = "";
+        public static string strConfigSerialPortParity = "";
+        public static string strConfigSerialPortBitsDatos = "";
+        public static string strConfigserialPortBitsStopBits = "";
+
         public static string strConfigLogDataReceiving = "";
 
         public static ClsAccesoDatos objDB;
         public static ClsImpresion objImpresion;
-
-
-
 
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Balanza
@@ -16,7 +17,7 @@ namespace Balanza
     {
         ClsImpresion objImpresion = new ClsImpresion();
         clsMercaderia clsMercaderia = new clsMercaderia();
-        ClsImpresion objImpresionTemp;
+        ClsTicketEntidad objTicket;
         bool blnIncicioFormularioSinError = false;
         public FormImpresiones()
         {
@@ -150,8 +151,9 @@ namespace Balanza
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
             string strSql;
-            string strFechaDesde= dtpFechaDesde.Value.ToString("yyyy-MM-dd") + " 00:00:00";
+            string strFechaDesde = dtpFechaDesde.Value.ToString("yyyy-MM-dd") + " 00:00:00";
             string strFechaHasta = dtpFechaHasta.Value.ToString("yyyy-MM-dd") + " 23:59:59";
+            
 
             LimpiarCampos();
 
@@ -172,7 +174,7 @@ namespace Balanza
 
             if (chkUltimoImpreso.Checked)
             {
-                strSql += " WHERE Impresiones.NroTk =(select max( Impresiones.NroTk) from  Impresiones);";
+                strSql += " WHERE Impresiones.NroTk =(select max( Impresiones.NroTk) from  Impresiones)";
             }
 
             if (chkNroTicket.Checked)
@@ -186,7 +188,7 @@ namespace Balanza
                     txtNrotkBusqueda.Focus();
                     return;
                 }
-                strSql += " WHERE Impresiones.NroTk =" + txtNrotkBusqueda.Text + ";";
+                strSql += " WHERE Impresiones.NroTk =" + txtNrotkBusqueda.Text ;
 
 
             }
@@ -211,19 +213,21 @@ namespace Balanza
             }
             if (chkFechas.Checked && !chkMercaderia.Checked)
             {
-                strSql += " WHERE Impresiones.FechaHora >=#" + strFechaDesde + "# and Impresiones.FechaHora <=#" + strFechaHasta + "#  ;";
+                strSql += " WHERE Impresiones.FechaHora >=#" + strFechaDesde + "# and Impresiones.FechaHora <=#" + strFechaHasta + "# ";
             }
             if (!chkFechas.Checked && chkMercaderia.Checked)
             {
-                strSql = strSql + " WHERE Impresiones.IdMercaderia=" + cmbMercaderia.SelectedValue.ToString() + ";";
+                strSql = strSql + " WHERE Impresiones.IdMercaderia=" + cmbMercaderia.SelectedValue.ToString() ;
 
                 //operativosComboBox.Items[operativosComboBox.SelectedIndex]
             }
             if (chkFechas.Checked && chkMercaderia.Checked)
             {
                 strSql += " WHERE Impresiones.IdMercaderia=" + cmbMercaderia.SelectedValue.ToString() + " and ";
-                strSql += " Impresiones.FechaHora >=#" + strFechaDesde + "# and Impresiones.FechaHora <=#" + strFechaHasta + "#  ;";
+                strSql += " Impresiones.FechaHora >=#" + strFechaDesde + "# and Impresiones.FechaHora <=#" + strFechaHasta + "#  ";
             }
+
+            strSql += " order by Impresiones.IdImpresion;";
 
 
             try
@@ -252,29 +256,29 @@ namespace Balanza
             }
         }
 
-        private void txtNrotkBusqueda_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                e.Handled = false;
-                cmdBuscar_Click(null, null);
-            }
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
+        //private void txtNrotkBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == (char)13)
+        //    {
+        //        e.Handled = false;
+        //        cmdBuscar_Click(null, null);
+        //    }
+        //    if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+        //    {
+        //        e.Handled = true;
+        //    }
 
-        }
-        private void dgwImpreciones_SelectionChanged(object sender, EventArgs e)
-        {
-            // Manejar cambio de selección
-            if (dgwImpreciones.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = dgwImpreciones.SelectedRows[0];
-                // Código para manejar la nueva fila seleccionada
-                CargarTk(selectedRow);
-            }
-        }
+        //}
+        //private void dgwImpreciones_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    // Manejar cambio de selección
+        //    if (dgwImpreciones.SelectedRows.Count > 0)
+        //    {
+        //        DataGridViewRow selectedRow = dgwImpreciones.SelectedRows[0];
+        //        // Código para manejar la nueva fila seleccionada
+        //        CargarTk(selectedRow);
+        //    }
+        //}
 
         private void dgwImpreciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -285,7 +289,18 @@ namespace Balanza
                 CargarTk(selectedRow);
             }
         }
-        private void dgwImprecione_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgwImpreciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Manejar cualquier clic en una celda
+            if (e.RowIndex >= 0)
+            {
+                // Obtén la fila en la que se hizo clic
+                DataGridViewRow selectedRow = dgwImpreciones.Rows[e.RowIndex];
+                CargarTk(selectedRow);
+            }
+        }
+
+        private void dgwImpreciones_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             // Manejar cualquier clic en una celda
             if (e.RowIndex >= 0)
@@ -297,44 +312,56 @@ namespace Balanza
         }
 
 
+        //private void dgwImprecione_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    // Manejar cualquier clic en una celda
+        //    if (e.RowIndex >= 0)
+        //    {
+        //        // Obtén la fila en la que se hizo clic
+        //        DataGridViewRow selectedRow = dgwImpreciones.Rows[e.RowIndex];
+        //        CargarTk(selectedRow);
+        //    }
+        //}
+
         private void CargarTk(DataGridViewRow selectedRow)
         {
             LimpiarCampos();
             try
             {
-                objImpresionTemp = new ClsImpresion();
+                
+                objTicket = new ClsImpresion();
 
                 // Accede a los valores de las celdas de la fila seleccionada
 
-                objImpresionTemp.NroTk = long.Parse(selectedRow.Cells["NroTk"].Value.ToString());
-                objImpresionTemp.IdImpresion = long.Parse(selectedRow.Cells["IdImpresion"].Value.ToString());
-                objImpresionTemp.FechaHora = DateTime.Parse(selectedRow.Cells["FechaHora"].Value.ToString());
-                //objImpresionTemp.IdEmpresa = selectedRow.Cells["NombreColumna"].Value.ToString();
-                objImpresionTemp.RazonSocial = selectedRow.Cells["RazonSocial"].Value.ToString();
+                objTicket.NroTk = long.Parse(selectedRow.Cells["NroTk"].Value.ToString());
+                objTicket.IdImpresion = long.Parse(selectedRow.Cells["IdImpresion"].Value.ToString());
+                objTicket.FechaHora = DateTime.Parse(selectedRow.Cells["FechaHora"].Value.ToString());
+                //objTicket.IdEmpresa = selectedRow.Cells["NombreColumna"].Value.ToString();
+                objTicket.RazonSocial = selectedRow.Cells["RazonSocial"].Value.ToString();
 
-                objImpresionTemp.CUIT = selectedRow.Cells["CUIT"].Value.ToString();
-                objImpresionTemp.CodigoAduana = selectedRow.Cells["CodigoAduana"].Value.ToString();
-                objImpresionTemp.LotPlanta = selectedRow.Cells["LotPlanta"].Value.ToString();
-                objImpresionTemp.LotBalanza = selectedRow.Cells["LotBalanza"].Value.ToString();
+                objTicket.CUIT = selectedRow.Cells["CUIT"].Value.ToString();
+                objTicket.CodigoAduana = selectedRow.Cells["CodigoAduana"].Value.ToString();
+                objTicket.LotPlanta = selectedRow.Cells["LotPlanta"].Value.ToString();
+                objTicket.LotBalanza = selectedRow.Cells["LotBalanza"].Value.ToString();
 
-                objImpresionTemp.Certificado = selectedRow.Cells["Certificado"].Value.ToString();
-                objImpresionTemp.ValidadCert = selectedRow.Cells["ValidadCert"].Value.ToString();
-                objImpresionTemp.NroPermEmbarque = selectedRow.Cells["NroPermEmbarque"].Value.ToString();
-                objImpresionTemp.IdContenedor = selectedRow.Cells["IdentificadorBulto"].Value.ToString();
-                objImpresionTemp.IdentificadorBulto = selectedRow.Cells["IdentificadorBulto"].Value.ToString();
-                //objImpresionTemp.IdMercaderia = selectedRow.Cells["IdMercaderia"].Value.ToString();
-                objImpresionTemp.Mercaderia = selectedRow.Cells["Mercaderia"].Value.ToString();
-                objImpresionTemp.Peso = selectedRow.Cells["Peso"].Value.ToString();
+                objTicket.Certificado = selectedRow.Cells["Certificado"].Value.ToString();
+                objTicket.ValidadCert = selectedRow.Cells["ValidadCert"].Value.ToString();
+                objTicket.NroPermEmbarque = selectedRow.Cells["NroPermEmbarque"].Value.ToString();
+                objTicket.IdContenedor = selectedRow.Cells["IdentificadorBulto"].Value.ToString();
+                objTicket.IdentificadorBulto = selectedRow.Cells["IdentificadorBulto"].Value.ToString();
+                //objTicket.IdMercaderia = selectedRow.Cells["IdMercaderia"].Value.ToString();
+                objTicket.Mercaderia = selectedRow.Cells["Mercaderia"].Value.ToString();
+                objTicket.Peso = selectedRow.Cells["Peso"].Value.ToString();
 
 
-                txtNroTicket.Text = objImpresionTemp.NroTk.ToString();
-                txtCertificado.Text = objImpresionTemp.Certificado;
-                txtValidadCert.Text = objImpresionTemp.ValidadCert;
-                txtNroPermisoEmbarque.Text = objImpresionTemp.NroPermEmbarque;
-                txtIDContenedor.Text = objImpresionTemp.IdContenedor;
-                txtIdentificadorBultoTxt.Text = objImpresionTemp.IdentificadorBulto;
-                txtMercaderia.Text = objImpresionTemp.Mercaderia;
-                txtPeso.Text = objImpresionTemp.Peso;
+                txtNroTicket.Text = objTicket.NroTk.ToString("0000000000");
+                txtCertificado.Text = objTicket.Certificado;
+                txtValidadCert.Text = objTicket.ValidadCert;
+                txtNroPermisoEmbarque.Text = objTicket.NroPermEmbarque;
+                txtIDContenedor.Text = objTicket.IdContenedor;
+                txtIdentificadorBultoTxt.Text = objTicket.IdentificadorBulto;
+                txtMercaderia.Text = objTicket.Mercaderia;
+                txtPeso.Text = objTicket.Peso;
             }
             catch (Exception ex)
             {
@@ -345,7 +372,7 @@ namespace Balanza
                                );
             }
         }
-    
+
         private void LimpiarCampos()
         {
             txtNroTicket.Clear();
@@ -358,6 +385,49 @@ namespace Balanza
             txtPeso.Clear();
 
         }
+
+        private void cmdImprimir_Click(object sender, EventArgs e)
+        {
+            //cargo el reporte 
+            FormTK objReporte = new FormTK();
+            objReporte.objTicket = objTicket;
+            objReporte.SetearReporte();
+            objReporte.ShowDialog();
+            objReporte.Dispose();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNroTicket_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txtNroTicket.Text.Length > 0)
+            { cmdImprimir.Enabled = true; }
+            else {
+                cmdImprimir.Enabled=false;
+            }
+        }
+
+        private void txtNrotkBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
 
 
 

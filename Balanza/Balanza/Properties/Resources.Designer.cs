@@ -61,12 +61,12 @@ namespace Balanza.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
-        internal static System.Drawing.Bitmap AcercaDe {
+        internal static byte[] Balanza {
             get {
-                object obj = ResourceManager.GetObject("AcercaDe", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("Balanza", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

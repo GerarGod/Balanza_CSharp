@@ -20,15 +20,17 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label terminalLabel;
+        private System.Windows.Forms.Label versionLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+    }
+}
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            label1 = new Label();
+/*
+ 
+             label1 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -54,9 +56,4 @@
             Text = "AcercaDe";
             ResumeLayout(false);
             PerformLayout();
-        }
-
-        #endregion
-        private Label label1;
-    }
-}
+ */
