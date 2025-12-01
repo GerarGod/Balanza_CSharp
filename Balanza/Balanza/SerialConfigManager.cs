@@ -16,6 +16,7 @@ namespace Balanza
         public string EncodingName { get; set; }
         public string NewLineHex { get; set; }
         public int ReadTimeout { get; set; }
+        public String ConfigLogDataReceiving { get; set; }
     }
 
     public static class SerialConfigManager
@@ -35,7 +36,8 @@ namespace Balanza
                 Handshake = (Handshake)Enum.Parse(typeof(Handshake), Get("serialPortHandshake", "None")),
                 EncodingName = Get("serialPortEncoding", "ASCII"),
                 NewLineHex = Get("serialPortNewLine", "0D-0A"),
-                ReadTimeout = GetInt("serialPortReadTimeout", 800)
+                ReadTimeout = GetInt("serialPortReadTimeout", 800),
+                ConfigLogDataReceiving =Get("ConfigLogDataReceiving", "N")
             };
         }
 
@@ -55,7 +57,14 @@ namespace Balanza
             Set(config, "serialPortEncoding", cfg.EncodingName);
             Set(config, "serialPortNewLine", cfg.NewLineHex);
             Set(config, "serialPortReadTimeout", cfg.ReadTimeout.ToString());
-
+            Set(config, "configLogDataReceiving", cfg?.ConfigLogDataReceiving?.ToString() ?? "N");//// Si es null o vacío, asigna un valor por defecto "N"
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
+        }
+        public static void SaveLog(String log)
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            Set(config, "configLogDataReceiving", log ?? "N");//// Si es null o vacío, asigna un valor por defecto "N"
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
         }

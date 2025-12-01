@@ -48,27 +48,6 @@ namespace Balanza
         {
             try
             {
-                // Leer configuraciones desde App.config
-                ClsGlobalVariables.strConfigSerialPortName = ConfigurationManager.AppSettings["serialPortName"] ?? "";
-                ClsGlobalVariables.strConfigSerialPortBaudios = ConfigurationManager.AppSettings["serialPortBaudios"] ?? "";
-                ClsGlobalVariables.strConfigSerialPortParity = ConfigurationManager.AppSettings["serialPortParity"] ?? "";
-                ClsGlobalVariables.strConfigSerialPortBitsDatos = ConfigurationManager.AppSettings["serialPortBitsDatos"] ?? "";
-                ClsGlobalVariables.strConfigserialPortBitsStopBits = ConfigurationManager.AppSettings["serialPortBitsStopBits"] ?? "";
-
-
-                ClsGlobalVariables.strConfigLogDataReceiving = ConfigurationManager.AppSettings["ConfigLogDataReceiving"] ?? "";
-
-                if (ClsGlobalVariables.strConfigSerialPortName.Length == 0)
-                {
-                    MessageBox.Show("Error reading app settings,no pudo reculerar el valor de strConfigSerialPortName");
-                    return;
-                }
-                if (ClsGlobalVariables.strConfigLogDataReceiving.Length == 0)
-                {
-                    MessageBox.Show("Error reading app settings,no pudo reculerar el valor de strConfigLogDataReceiving");
-                    return;
-                }
-
                 this.strDB_Source = ConfigurationManager.AppSettings["DB_Source"] ?? "";
 
                 if (strDB_Source.Length == 0)
@@ -200,6 +179,11 @@ namespace Balanza
         private void puertoCOMToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormConfigSerial>();  
+        }
+
+        private void FormBalanzaLG_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

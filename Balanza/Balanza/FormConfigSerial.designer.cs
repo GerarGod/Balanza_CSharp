@@ -502,6 +502,7 @@
             this.cmdGuardarLog.TabIndex = 11;
             this.cmdGuardarLog.Text = "Guardar";
             this.cmdGuardarLog.UseVisualStyleBackColor = false;
+            this.cmdGuardarLog.Click += new System.EventHandler(this.cmdGuardarLog_Click);
             // 
             // label10
             // 
@@ -524,6 +525,8 @@
             this.txtLog.Size = new System.Drawing.Size(28, 25);
             this.txtLog.TabIndex = 4;
             this.txtLog.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtLog.TextChanged += new System.EventHandler(this.txtLog_TextChanged);
+            this.txtLog.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLog_KeyPress);
             // 
             // FormConfigSerial
             // 

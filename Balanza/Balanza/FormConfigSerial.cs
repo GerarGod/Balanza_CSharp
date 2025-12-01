@@ -33,6 +33,7 @@ namespace Balanza
         private void FormConfigSerial_Load(object sender, EventArgs e)
         {
             CargarPuertosDisponibles();
+            MostrarConfiguracionEnTexto();
         }
 
         private void CargarPuertosDisponibles()
@@ -221,7 +222,7 @@ namespace Balanza
                 // 1️⃣ Cargar configuración del App.config
                 cfg = SerialConfigManager.Load();
                 // 2️⃣ Mostrar valores en pantalla (opcional)
-                MostrarConfiguracionEnTexto(cfg);
+                MostrarConfiguracionEnTexto();
 
             }
             catch (Exception ex)
@@ -261,17 +262,37 @@ namespace Balanza
             }
         }
 
-        private void MostrarConfiguracionEnTexto(SerialConfig cfg )
+        private void MostrarConfiguracionEnTexto( )
         {
-            // 2️⃣ Mostrar valores en pantalla (opcional)
-            txtBaudRate.Text = cfg.BaudRate.ToString();
-            txtDataBits.Text = cfg.DataBits.ToString();
-            txtParity.Text = cfg.Parity.ToString();
-            txtStopBits.Text = cfg.StopBits.ToString();
-            txtHandshake.Text = cfg.Handshake.ToString();
-            txtEncoding.Text = cfg.EncodingName;
-            txtNewLine.Text = cfg.NewLineHex;
-            txtReadTimeout.Text = cfg.ReadTimeout.ToString();
+
+            SerialConfig cfg;
+            //txtLog.Text = ConfigurationManager.AppSettings["ConfigLogDataReceiving"] ?? "";
+            try
+            {
+                // 1️⃣ Cargar configuración del App.config
+                cfg = SerialConfigManager.Load();
+                // 2️⃣ Mostrar valores en pantalla (opcional)
+                // 2️⃣ Mostrar valores en pantalla (opcional)
+                txtBaudRate.Text = cfg.BaudRate.ToString();
+                txtDataBits.Text = cfg.DataBits.ToString();
+                txtParity.Text = cfg.Parity.ToString();
+                txtStopBits.Text = cfg.StopBits.ToString();
+                txtHandshake.Text = cfg.Handshake.ToString();
+                txtEncoding.Text = cfg.EncodingName;
+                txtNewLine.Text = cfg.NewLineHex;
+                txtReadTimeout.Text = cfg.ReadTimeout.ToString();
+                txtLog.Text = cfg.ConfigLogDataReceiving;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error leyendo configuración:{Environment.NewLine}{ex.Message}",
+                    "Configuración", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+
+
         }
 
         private void ComenzarLectura()
@@ -427,24 +448,21 @@ namespace Balanza
         {
             try
             {
-             //   if (ClsGlobalVariables.strConfigLogDataReceiving == "S")
-             //   {
+                if (txtLog.Text == "S")
+                {
                     if (logFile == null)
                     {
                         // Obtener la fecha y hora actual
                         DateTime now = DateTime.Now;
-                        string strArchivo = $"{now:yyyyMMdd_HHmmss}";
+                        string strArchivo = $"{now:yyyyMMdd_HHmmss}"+"_Configurador";
                         nombreArchivo = $"{strArchivo}.txt";
 
                         // Abre el archivo de texto para registro continuo de datos
                         logFile = new StreamWriter(nombreArchivo, true); // 'true' para añadir datos al final del archivo existente
                         logFile.AutoFlush = true; // Asegura que los datos se escriban inmediatamente en el archivo
                     }
-
                     logFile.WriteLine(strDatos);
-
-               // }
-
+                }
 
             }
             catch (Exception ex)
@@ -479,27 +497,44 @@ namespace Balanza
 
         private void cmdConfigGuardada_Click(object sender, EventArgs e)
         {
-            SerialConfig cfg;
-
-            try
-            {
-                // 1️⃣ Cargar configuración del App.config
-                cfg = SerialConfigManager.Load();
-                // 2️⃣ Mostrar valores en pantalla (opcional)
-                MostrarConfiguracionEnTexto(cfg);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error leyendo configuración:{Environment.NewLine}{ex.Message}",
-                    "Configuración", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            MostrarConfiguracionEnTexto();
         }
 
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmdGuardarLog_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SerialConfigManager.SaveLog(txtLog.Text);
+                MessageBox.Show("Configuración Guardada Satisfactoriamente ", "Guardando Configuración", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(String.Format("Error Guardando datos. Error:{0},{1}", Environment.NewLine, ex.Message), "Guardando Configuración", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void txtLog_TextChanged(object sender, EventArgs e)
+        {
+            ////Convertir el texto a mayúsculas
+            txtLog.Text = txtLog.Text.ToUpper();
+            // txtPuertoSerie el cursor al final del texto
+            txtLog.SelectionStart = txtLog.Text.Length;
+        }
+
+        private void txtLog_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo números y algunas teclas especiales
+            if (e.KeyChar != 'S' && e.KeyChar != 's' &&
+                e.KeyChar != 'n' && e.KeyChar != 'N' && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Delete)
+            {
+                e.Handled = true; // Ignorar la tecla presionada
+            }
         }
     }
     /*
