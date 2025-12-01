@@ -35,6 +35,8 @@ namespace Balanza
             this.menuItemBalanza = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemImpresiones = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemConfiguraciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.ticketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puertoCOMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPrincipalBalanza = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
@@ -74,10 +76,26 @@ namespace Balanza
             // 
             // menuItemConfiguraciones
             // 
+            this.menuItemConfiguraciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ticketToolStripMenuItem,
+            this.puertoCOMToolStripMenuItem});
             this.menuItemConfiguraciones.Name = "menuItemConfiguraciones";
             this.menuItemConfiguraciones.Size = new System.Drawing.Size(128, 24);
             this.menuItemConfiguraciones.Text = "Configuraciones";
-            this.menuItemConfiguraciones.Click += new System.EventHandler(this.menuItemConfiguraciones_Click);
+            // 
+            // ticketToolStripMenuItem
+            // 
+            this.ticketToolStripMenuItem.Name = "ticketToolStripMenuItem";
+            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.ticketToolStripMenuItem.Text = "Ticket";
+            this.ticketToolStripMenuItem.Click += new System.EventHandler(this.ticketToolStripMenuItem_Click);
+            // 
+            // puertoCOMToolStripMenuItem
+            // 
+            this.puertoCOMToolStripMenuItem.Name = "puertoCOMToolStripMenuItem";
+            this.puertoCOMToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.puertoCOMToolStripMenuItem.Text = "Puerto COM";
+            this.puertoCOMToolStripMenuItem.Click += new System.EventHandler(this.puertoCOMToolStripMenuItem_Click);
             // 
             // menuItemAcercaDe
             // 
@@ -124,5 +142,7 @@ namespace Balanza
         private ToolStripMenuItem menuItemConfiguraciones;
         private ToolStripMenuItem menuItemAcercaDe;
         private Panel panelPrincipalBalanza;
+        private ToolStripMenuItem ticketToolStripMenuItem;
+        private ToolStripMenuItem puertoCOMToolStripMenuItem;
     }
 }
