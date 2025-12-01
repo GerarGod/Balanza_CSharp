@@ -14,7 +14,8 @@ using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
 
-namespace PruebaLectura
+namespace Balanza
+
 {
     public partial class FormConfigSerial : Form
     {
@@ -494,6 +495,11 @@ namespace PruebaLectura
                     "Configuración", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
     /*

@@ -1,4 +1,4 @@
-﻿namespace PruebaLectura
+﻿namespace Balanza
 {
     partial class FormConfigSerial
     {
@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbPuertos = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmdConfigGuardada = new System.Windows.Forms.Button();
             this.cmdGuardarConfig = new System.Windows.Forms.Button();
             this.txtReadTimeout = new System.Windows.Forms.TextBox();
             this.txtNewLine = new System.Windows.Forms.TextBox();
@@ -61,9 +62,13 @@
             this.cmdStop = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lstLectura = new System.Windows.Forms.ListBox();
-            this.cmdConfigGuardada = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmdGuardarLog = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtLog = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdDetectar
@@ -81,16 +86,16 @@
             this.lstResultados.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstResultados.FormattingEnabled = true;
             this.lstResultados.ItemHeight = 16;
-            this.lstResultados.Location = new System.Drawing.Point(205, 54);
+            this.lstResultados.Location = new System.Drawing.Point(192, 46);
             this.lstResultados.Name = "lstResultados";
-            this.lstResultados.Size = new System.Drawing.Size(571, 388);
+            this.lstResultados.Size = new System.Drawing.Size(571, 404);
             this.lstResultados.TabIndex = 3;
             this.lstResultados.SelectedIndexChanged += new System.EventHandler(this.lstResultados_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(201, 28);
+            this.label2.Location = new System.Drawing.Point(188, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 21);
             this.label2.TabIndex = 4;
@@ -133,14 +138,25 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(793, 448);
+            this.groupBox1.Size = new System.Drawing.Size(771, 464);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Puerto Configuracion";
             // 
+            // cmdConfigGuardada
+            // 
+            this.cmdConfigGuardada.Location = new System.Drawing.Point(15, 61);
+            this.cmdConfigGuardada.Name = "cmdConfigGuardada";
+            this.cmdConfigGuardada.Size = new System.Drawing.Size(171, 30);
+            this.cmdConfigGuardada.TabIndex = 28;
+            this.cmdConfigGuardada.Tag = "";
+            this.cmdConfigGuardada.Text = "Config. Guardada";
+            this.cmdConfigGuardada.UseVisualStyleBackColor = true;
+            this.cmdConfigGuardada.Click += new System.EventHandler(this.cmdConfigGuardada_Click);
+            // 
             // cmdGuardarConfig
             // 
-            this.cmdGuardarConfig.Location = new System.Drawing.Point(14, 394);
+            this.cmdGuardarConfig.Location = new System.Drawing.Point(6, 406);
             this.cmdGuardarConfig.Name = "cmdGuardarConfig";
             this.cmdGuardarConfig.Size = new System.Drawing.Size(171, 40);
             this.cmdGuardarConfig.TabIndex = 27;
@@ -321,7 +337,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label15.Location = new System.Drawing.Point(12, 37);
+            this.label15.Location = new System.Drawing.Point(12, 32);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(70, 17);
             this.label15.TabIndex = 5;
@@ -419,7 +435,7 @@
             this.cmdStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cmdStop.ForeColor = System.Drawing.Color.White;
             this.cmdStop.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmdStop.Location = new System.Drawing.Point(157, 28);
+            this.cmdStop.Location = new System.Drawing.Point(148, 28);
             this.cmdStop.Name = "cmdStop";
             this.cmdStop.Size = new System.Drawing.Size(99, 65);
             this.cmdStop.TabIndex = 38;
@@ -440,9 +456,9 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(811, 21);
+            this.groupBox2.Location = new System.Drawing.Point(789, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(290, 439);
+            this.groupBox2.Size = new System.Drawing.Size(254, 396);
             this.groupBox2.TabIndex = 46;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Test Lesctura";
@@ -454,25 +470,67 @@
             this.lstLectura.ItemHeight = 16;
             this.lstLectura.Location = new System.Drawing.Point(13, 149);
             this.lstLectura.Name = "lstLectura";
-            this.lstLectura.Size = new System.Drawing.Size(243, 276);
+            this.lstLectura.Size = new System.Drawing.Size(234, 244);
             this.lstLectura.TabIndex = 46;
             // 
-            // cmdConfigGuardada
+            // groupBox3
             // 
-            this.cmdConfigGuardada.Location = new System.Drawing.Point(15, 61);
-            this.cmdConfigGuardada.Name = "cmdConfigGuardada";
-            this.cmdConfigGuardada.Size = new System.Drawing.Size(171, 30);
-            this.cmdConfigGuardada.TabIndex = 28;
-            this.cmdConfigGuardada.Tag = "";
-            this.cmdConfigGuardada.Text = "Config. Guardada";
-            this.cmdConfigGuardada.UseVisualStyleBackColor = true;
-            this.cmdConfigGuardada.Click += new System.EventHandler(this.cmdConfigGuardada_Click);
+            this.groupBox3.Controls.Add(this.cmdGuardarLog);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.txtLog);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.groupBox3.Location = new System.Drawing.Point(789, 411);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(254, 65);
+            this.groupBox3.TabIndex = 47;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Log";
+            // 
+            // cmdGuardarLog
+            // 
+            this.cmdGuardarLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(84)))), ((int)(((byte)(148)))));
+            this.cmdGuardarLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmdGuardarLog.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(37)))));
+            this.cmdGuardarLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(158)))), ((int)(((byte)(81)))));
+            this.cmdGuardarLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdGuardarLog.ForeColor = System.Drawing.Color.White;
+            this.cmdGuardarLog.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cmdGuardarLog.Location = new System.Drawing.Point(163, 19);
+            this.cmdGuardarLog.Name = "cmdGuardarLog";
+            this.cmdGuardarLog.Size = new System.Drawing.Size(84, 36);
+            this.cmdGuardarLog.TabIndex = 11;
+            this.cmdGuardarLog.Text = "Guardar";
+            this.cmdGuardarLog.UseVisualStyleBackColor = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(6, 30);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 17);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Datos Recibidos:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // txtLog
+            // 
+            this.txtLog.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtLog.Location = new System.Drawing.Point(123, 27);
+            this.txtLog.MaxLength = 1;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.Size = new System.Drawing.Size(28, 25);
+            this.txtLog.TabIndex = 4;
+            this.txtLog.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // FormConfigSerial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 472);
+            this.ClientSize = new System.Drawing.Size(1055, 482);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormConfigSerial";
@@ -482,6 +540,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -521,5 +581,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox lstLectura;
         private System.Windows.Forms.Button cmdConfigGuardada;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button cmdGuardarLog;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtLog;
     }
 }

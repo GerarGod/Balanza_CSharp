@@ -191,15 +191,15 @@ namespace Balanza
             }
         }
 
-        private void FormBalanzaLG_Load_1(object sender, EventArgs e)
-        {
 
-        }
-
-        private void menuItemConfiguraciones_Click(object sender, EventArgs e)
+        private void ticketToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormConfiguraciones>();
-            
+        }
+
+        private void puertoCOMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormConfigSerial>();  
         }
     }
 }

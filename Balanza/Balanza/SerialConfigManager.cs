@@ -3,7 +3,7 @@ using System.Configuration;
 using System.IO.Ports;
 using System.Text;
 
-namespace PruebaLectura
+namespace Balanza
 {
     public class SerialConfig
     {
