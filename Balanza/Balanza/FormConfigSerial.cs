@@ -387,6 +387,7 @@ namespace Balanza
                                     txtTara.Text = tara;
                                     txtPesoTotal.Text = Total;
 
+
                                 }));
                                 if (lstLectura.InvokeRequired)
                                 {
